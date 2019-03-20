@@ -9,7 +9,7 @@ environments:
         port: 80
         deployment:
           method: bluegreen
-          active: blue
+          active: green
         env:
           - name: APP_PORT
             value: 80
@@ -23,7 +23,7 @@ environments:
         replicas: 1
         deployment:
           method: bluegreen
-          active: blue
+          active: green
         hpa:
           min_replicas: 1
           max_replicas: 5
