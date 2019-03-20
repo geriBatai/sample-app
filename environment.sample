@@ -22,7 +22,7 @@ environments:
         replicas: 1
         deployment:
           method: bluegreen
-          active: green
+          active: blue
         hpa:
           min_replicas: 1
           max_replicas: 5
