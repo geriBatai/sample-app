@@ -8,7 +8,8 @@ environments:
         ssl: false
         port: 80
         deployment:
-          method: rolling-upgrade
+          method: bluegreen
+          active: blue
         env:
           - name: APP_PORT
             value: 80
