@@ -24,7 +24,7 @@ environments:
           method: bluegreen
           active: blue
         hpa:
-          min_replicas: 1
+          min_replicas: 2
           max_replicas: 5
           metric:
             name: cpu
