@@ -19,7 +19,7 @@ environments:
           memory: 100Mi
       - name: back
         port: 80
-        replicas: 1
+        replicas: 2
         deployment:
           method: bluegreen
           active: blue
