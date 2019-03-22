@@ -7,6 +7,7 @@ environments:
         external_url: front.sample-app.domain
         ssl: false
         port: 80
+        replicas: 2
         deployment:
           method: bluegreen
           active: blue
