@@ -15,7 +15,7 @@ environments:
             target_cpu_utilization_percentage: 75
         deployment:
           method: bluegreen
-          active: blue
+          active: green
         env:
           - name: APP_PORT
             value: 80
