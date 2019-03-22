@@ -15,7 +15,7 @@ environments:
             target_cpu_utilization_percentage: 75
         deployment:
           method: bluegreen
-          active: green
+          active: blue
         env:
           - name: APP_PORT
             value: 80
@@ -44,27 +44,3 @@ environments:
         limits:
            cpu: 500m
            memory: 100Mi
-      - name: api
-        port: 9898
-        replicas: 1
-        hpa:
-          min_replicas: 1
-          max_replicas: 10
-          metric:
-            name: http_requests
-            target_average_value: 2
-        env:
-          - name: APP_PORT
-            value: 9898
-        annotations:
-          - name: prometheus.io/scrape
-            value: true
-          - name: prometheus.io/path
-            value: /metrics
-          - name: prometheus.io/port
-            value: 9898
-        requests:
-           cpu: 100m
-        limits:
-           cpu: 500m
-
