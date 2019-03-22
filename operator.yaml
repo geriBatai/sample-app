@@ -1,0 +1,153 @@
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: sample-app-read-access
+  namespace: sample-app
+rules:
+- apiGroups: [""]
+  resources: ["*"]
+  verbs: ["get", "watch", "list"]
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: sample-app-read-binding
+  namespace: sample-app
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: sample-app
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: sample-app-read-access
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: sample-app-binding
+  namespace: sample-app
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: sample-app
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: edit
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  labels:
+    name: environment-operator
+  name: environment-operator
+  namespace: sample-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: environment-operator
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name: environment-operator
+        version: "1"
+      name: environment-operator
+    spec:
+      containers:
+      - env:
+        - name: GIT_REMOTE_REPOSITORY
+          value: git@github.com:geriBatai/sample-app.git
+        - name: GIT_BRANCH
+          value: master
+        - name: GIT_PRIVATE_KEY
+          valueFrom:
+            secretKeyRef:
+              key: key
+              name: git-private-key
+        - name: DOCKER_REGISTRY
+          value: index.docker.io
+        - name: PROJECT
+          value: pearsontechnology
+        - name: ENVIRONMENT_NAME
+          value: sample-app-environment
+        - name: BITESIZE_FILE
+          value: environment.sample
+        - name: AUTH_TOKEN_FILE
+          value: /etc/auth/token
+        - name: DEBUG
+          value: "true"
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+        image: geribatai/eo:2ad5886e7fc5875755ec3a3f0de09648c822d406
+        imagePullPolicy: Always
+        name: environment-operator
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /etc/auth
+          name: auth-token
+          readOnly: true
+        - mountPath: /etc/git
+          name: git-key
+          readOnly: true
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: auth-token
+        secret:
+          defaultMode: 420
+          secretName: auth-token-file
+      - name: git-key
+        secret:
+          defaultMode: 420
+          secretName: git-private-key
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: environment-operator
+  name: environment-operator
+  namespace: sample-app
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    name: environment-operator
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: environment-operator
+  namespace: sample-app
+spec:
+  rules:
+  - host: environment-operator.sample-app.domain
+    http:
+      paths:
+      - backend:
+          serviceName: environment-operator
+          servicePort: 80
+        path: /
