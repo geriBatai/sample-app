@@ -7,7 +7,12 @@ environments:
         external_url: front.sample-app.domain
         ssl: false
         port: 80
-        replicas: 2
+        hpa:
+          min_replicas: 2
+          max_replicas: 5
+          metric:
+            name: cpu
+            target_cpu_utilization_percentage: 75
         deployment:
           method: bluegreen
           active: blue
