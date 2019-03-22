@@ -8,7 +8,7 @@ environments:
         ssl: false
         port: 80
         hpa:
-          min_replicas: 2
+          min_replicas: 1
           max_replicas: 5
           metric:
             name: cpu
