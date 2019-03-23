@@ -16,6 +16,9 @@ environments:
         deployment:
           method: bluegreen
           active: green
+          custom_urls:
+            blue:
+            - www.custom.url
         env:
           - name: APP_PORT
             value: 80
