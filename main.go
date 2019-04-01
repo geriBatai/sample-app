@@ -67,7 +67,7 @@ var tmpl = `
   </div>
 
   <div class="container">
-  <div class="centered"><h1>Ohai {{ .Title }}</h1></div>
+  <div class="centered"><h1>Hello {{ .Title }}</h1></div>
   </div>
 </body>
 `
