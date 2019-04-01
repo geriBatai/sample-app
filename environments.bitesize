@@ -7,7 +7,7 @@ environments:
       - name: sample-app
         external_url: maindomain.example
         ssl: false
-        port: 80
+        port: 8080
         hpa:
           min_replicas: 3
           max_replicas: 5
