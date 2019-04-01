@@ -1,0 +1,21 @@
+---
+project: pearsontechnology
+environments:
+  - name: sample-app-environment
+    namespace: sample-app
+    services:
+      - name: sample-app
+        external_url: maindomain.example
+        ssl: false
+        port: 80
+        hpa:
+          min_replicas: 3
+          max_replicas: 5
+        deployment:
+          method: bluegreen
+          active: green
+          custom_urls:
+            blue:
+              - blue.example
+            green:
+              - green.example
