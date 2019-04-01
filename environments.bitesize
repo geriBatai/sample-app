@@ -13,7 +13,7 @@ environments:
           max_replicas: 5
         deployment:
           method: bluegreen
-          active: green
+          active: blue
           custom_urls:
             blue:
               - blue.example
