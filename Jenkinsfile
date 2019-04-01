@@ -33,7 +33,7 @@ pipeline {
         stage("deploy") {
             steps {
                 script {
-                    sh "./deploy.sh -e ${endpoint} -s ${service} -v ${version}"
+                    sh "./deploy.sh -e ${endpoint} -n ${service} -v ${version}"
                 }
             }
         }
