@@ -41,7 +41,7 @@ pipeline {
         stage("test") {
             steps {
                 script {
-                    sh "curl http://maindomain.example/env"
+                    sh "curl -s http://maindomain.example/env"
                 }
             }
         }

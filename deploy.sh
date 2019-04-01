@@ -34,7 +34,7 @@ if [ -z "${version}" ] || [ -z "${name}" ]; then
 fi
 
 [ -z "${endpoint}" ] && endpoint="localhost:8080"
-[ -z "${token}" ] && token=$(/bin/cat token)
+#[ -z "${token}" ] && token=$(/bin/cat token)
 [ -z "${app}" ] && app="${name}"
 
 auth_header="Authentication: Bearer ${token}"

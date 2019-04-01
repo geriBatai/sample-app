@@ -87,7 +87,7 @@ func defaultHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func envHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf(colour())
+	_, _ = fmt.Fprintf(w, colour())
 }
 
 func colour() string {
