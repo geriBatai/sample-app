@@ -15,6 +15,7 @@ pipeline {
                 script {
                     version = sh(script: "git rev-parse --short HEAD", returnStdout: true).trim()
                     endpoint = "http://localhost:9999"
+                    service  = "sample-app"
                 }
             }
         }
@@ -22,8 +23,8 @@ pipeline {
         stage("build") {
             steps {
                 script {
-                    sh "docker build -t geribatai/sample-app:${version} ."
-                    sh "docker push geribatai/sample-app:${version}"
+                    sh "docker build -t geribatai/${service}-app:${version} ."
+                    sh "docker push geribatai/${service}:${version}"
                 }
             }
         }
@@ -32,7 +33,7 @@ pipeline {
         stage("deploy") {
             steps {
                 script {
-                    sh "./deploy.sh --endpoint ${endpoint} --version ${version}"
+                    sh "./deploy.sh -e ${endpoint} -s ${service} -v ${version}"
                 }
             }
         }
