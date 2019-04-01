@@ -23,7 +23,7 @@ pipeline {
         stage("build") {
             steps {
                 script {
-                    sh "docker build -t geribatai/${service}-app:${version} ."
+                    sh "docker build -t geribatai/${service}:${version} ."
                     sh "docker push geribatai/${service}:${version}"
                 }
             }
