@@ -4,9 +4,9 @@ def endpoint
 pipeline {
     agent any
 
-    triggers {
-        pollSCM('H/1 * * * *')
-    }
+    // triggers {
+    //     pollSCM('H/1 * * * *')
+    // }
 
     stages {
 
