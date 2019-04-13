@@ -48,7 +48,7 @@ environments:
   - name: kong-postgres
     options:
       allocatedstorage: '200'
-      dbinstanceclass: db.t3.medium
+      dbinstanceclass: db.m3.medium
       multiaz: 'False'
       replicas: 2
       version: 9.6.6
