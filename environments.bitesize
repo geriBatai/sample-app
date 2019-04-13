@@ -2,5 +2,65 @@ environments:
 - name: test
   namespace: glp-test
   services:
-  - []
+  - name: cb1
+    options:
+      app_id: '100'
+      desired_capacity: ''
+      full_backup_sch: 1W:Sun
+      instance_type: t1.large
+      team_id: dba
+      volume_size: '200'
+      volume_type: gp2
+    type: couchbase
+  - application: kong-admin
+    env:
+    - name: PASSWD
+      value: postgres-glp-test
+    - name: UNAME
+      value: admin
+    external_url: kong-glp-test.glp.pearsondev.tech
+    httpsOnly: false
+    name: kong-admin
+    port: 8080
+    replicas: 1
+    ssl: false
+    version: 0.10.2
+  - application: git2consul
+    env:
+    - name: BRANCH
+      value: glp-test
+    - name: CONSUL_ENDPOINT
+      value: consul.bitesize.glp-preprod.prsn.io
+    - name: CONSUL_PORT
+      value: '8500'
+    - name: CONSUL_HTTP_SSL_VERIFY
+      value: 'false'
+    - name: CONFIG_KEY
+      value: glp-uat/git2consul/config
+    - name: MOUNT_POINT
+      value: glp-uat
+    - secret: TOKEN
+      value: consul-glp-uat-write
+    name: git2consul
+    port: 7500
+    ssl: false
+    version: '36'
+  - name: kong-postgres
+    options:
+      allocatedstorage: '200'
+      dbinstanceclass: db.t3.medium
+      multiaz: 'False'
+      replicas: 2
+      version: 9.6.6
+    type: postgres
+    version: 1.0
+  - name: ''
+    options:
+      allocatedstorage: ''
+      dbinstanceclass: ''
+      multiaz: ''
+      replicas: 2
+      version: 9.6.6
+    type: postgres
+    version: 1.0
 project: glp
