@@ -45,7 +45,7 @@ environments:
     port: 7500
     ssl: false
     version: '36'
-  - name: <class 'jinja2.utils.Namespace'>-kong
+  - name: glp-test-kong
     options:
       allocatedstorage: '200'
       dbinstanceclass: db.m3.medium
