@@ -40,7 +40,7 @@ environments:
     - name: MOUNT_POINT
       value: glp-uat
     - secret: TOKEN
-      value: consul-glp-uat-write
+      value: consul-read
     name: git2consul
     port: 7500
     ssl: false
