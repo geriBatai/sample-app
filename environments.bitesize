@@ -30,7 +30,7 @@ environments:
     - name: BRANCH
       value: glp-test
     - name: CONSUL_ENDPOINT
-      value: consul.bitesize.glp-preprod.prsn.io
+      value: consul.glp-test.svc.cluster.local
     - name: CONSUL_PORT
       value: '8500'
     - name: CONSUL_HTTP_SSL_VERIFY
@@ -40,7 +40,7 @@ environments:
     - name: MOUNT_POINT
       value: glp-uat
     - secret: TOKEN
-      value: consul-read
+      value: consul-write
     name: git2consul
     port: 7500
     ssl: false
