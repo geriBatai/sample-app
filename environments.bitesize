@@ -32,7 +32,7 @@ environments:
     - name: CONSUL_ENDPOINT
       value: consul.glp-test.svc.cluster.local
     - name: CONSUL_PORT
-      value: '8500'
+      value: '8543'
     - name: CONSUL_HTTP_SSL_VERIFY
       value: 'false'
     - name: CONFIG_KEY
