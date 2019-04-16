@@ -36,9 +36,9 @@ environments:
     - name: CONSUL_HTTP_SSL_VERIFY
       value: 'false'
     - name: CONFIG_KEY
-      value: glp-uat/git2consul/config
+      value: glp-test/git2consul/config
     - name: MOUNT_POINT
-      value: glp-uat
+      value: glp-test
     - secret: TOKEN
       value: consul-write
     name: git2consul
