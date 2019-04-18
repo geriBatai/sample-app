@@ -59,13 +59,13 @@ environments:
     - name: KONG_DATABASE
       value: postgres
     - name: KONG_PG_USER
-      value: kong-db-properties/pg_user
+      value: pg-glp-test-kong/pg_user
     - name: KONG_PG_PASSWORD
-      value: kong-db-properties/pg_password
+      value: pg-glp-test-kong/pg_password
     - secret: KONG_PG_DATABASE
-      value: kong-db-properties/pg_database
+      value: pg-glp-test-kong/pg_database
     - secret: KONG_PG_HOST
-      value: kong-db-properties/pg_host
+      value: pg-glp-test-kong/pg_host
     - name: KONG_LUA_PACKAGE_PATH
       value: /oauth-iam/glp-token-validate/lua_modules/share/lua/5.1/kong/plugins/glp-token-validate/?.lua
     - name: KONG_CUSTOM_PLUGINS
