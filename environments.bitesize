@@ -58,7 +58,7 @@ environments:
     env:
     - name: KONG_DATABASE
       value: postgres
-    - name: KONG_PG_USER
+    - secret: KONG_PG_USER
       value: pg-glp-test-kong/pg_user
     - name: KONG_PG_PASSWORD
       value: pg-glp-test-kong/pg_password
