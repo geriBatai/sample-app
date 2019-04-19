@@ -21,7 +21,7 @@ environments:
       volume_size: '200'
       volume_type: gp2
     type: couchbase
-  - name: zookeeper
+  - name: glp-zookeeper
     options:
       replicas: 3
       resources_limits_cpu: 500m
@@ -50,14 +50,14 @@ environments:
     port: 7500
     ssl: false
     version: '36'
-  - name: kafka
+  - name: glp-kafka
     options:
       replicas: 3
       resources_limits_cpu: 500m
       resources_limits_memory: 512Mi
       resources_requests_cpu: 500m
       resources_requests_memory: 512Mi
-      zookeeperConnect: zookeeper
+      zookeeperConnect: glp-zookeeper
     type: kafka
     version: 1.0
   - application: kong-dashboard
