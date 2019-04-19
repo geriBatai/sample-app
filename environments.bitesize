@@ -11,17 +11,6 @@ environments:
       version: 9.6.6
     type: postgres
     version: 1.0
-  - name: cb1
-    options:
-      app_id: '100'
-      desired_capacity: ''
-      full_backup_sch: 1W:Sun
-      instance_type: t1.large
-      team_id: dba
-      volume_size: '200'
-      volume_type: gp2
-    type: couchbase
-    version: 1.0
   - name: glp-zookeeper
     options:
       replicas: 3
@@ -51,36 +40,6 @@ environments:
     port: 7500
     ssl: false
     version: '36'
-  - name: glp-kafka
-    options:
-      replicas: 3
-      resources_limits_cpu: 500m
-      resources_limits_memory: 512Mi
-      resources_requests_cpu: 500m
-      resources_requests_memory: 512Mi
-      zookeeperConnect: glp-zookeeper
-    type: kafka
-    version: 1.0
-  - application: kong-dashboard
-    command:
-    - ./docker/entrypoint.sh
-    - start
-    - --kong-url
-    - http://kong-api-gw:8001
-    - --basic-auth
-    - $(UNAME)=$(PASSWD)
-    env:
-    - name: PASSWD
-      value: postgres-glp-test
-    - name: UNAME
-      value: admin
-    external_url: kong-glp-test.glp.pearsondev.tech
-    httpsOnly: false
-    name: kong-admin
-    port: 8080
-    replicas: 1
-    ssl: false
-    version: v3.5.0
   - application: kong
     env:
     - name: KONG_DATABASE
@@ -104,4 +63,56 @@ environments:
     replicas: 1
     ssl: true
     version: v2.29
+  - name: cb2
+    options:
+      app_id: '100'
+      desired_capacity: ''
+      full_backup_sch: 1W:Sun
+      instance_type: t1.large
+      team_id: dba
+      volume_size: '200'
+      volume_type: gp2
+    type: couchbase
+    version: 1.0
+  - name: cb1
+    options:
+      app_id: '100'
+      desired_capacity: ''
+      full_backup_sch: 1W:Sun
+      instance_type: t1.large
+      team_id: dba
+      volume_size: '200'
+      volume_type: gp2
+    type: couchbase
+    version: 1.0
+  - application: kong-dashboard
+    command:
+    - ./docker/entrypoint.sh
+    - start
+    - --kong-url
+    - http://kong-api-gw:8001
+    - --basic-auth
+    - $(UNAME)=$(PASSWD)
+    env:
+    - name: PASSWD
+      value: postgres-glp-test
+    - name: UNAME
+      value: admin
+    external_url: kong-glp-test.glp.pearsondev.tech
+    httpsOnly: false
+    name: kong-admin
+    port: 8080
+    replicas: 1
+    ssl: false
+    version: v3.5.0
+  - name: glp-kafka
+    options:
+      replicas: 3
+      resources_limits_cpu: 500m
+      resources_limits_memory: 512Mi
+      resources_requests_cpu: 500m
+      resources_requests_memory: 512Mi
+      zookeeperConnect: glp-zookeeper
+    type: kafka
+    version: 1.0
 project: glp
