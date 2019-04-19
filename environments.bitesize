@@ -14,7 +14,6 @@ environments:
     type: couchbase
   - application: kong-dashboard
     command:
-    - kong-dashboard
     - start
     - --kong-url
     - http://kong-api-gw:8001
