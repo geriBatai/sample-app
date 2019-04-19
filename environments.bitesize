@@ -18,7 +18,8 @@ environments:
     - start
     - --kong-url
     - http://kong-api-gw:8001
-    - --basic-auth $(UNAME)=$(PASSWD)
+    - --basic-auth
+    - $(UNAME)=$(PASSWD)
     env:
     - name: PASSWD
       value: postgres-glp-test
