@@ -12,7 +12,13 @@ environments:
       volume_size: '200'
       volume_type: gp2
     type: couchbase
-  - application: kong-admin
+  - application: kong-dashboard
+    command:
+    - kong-dashboard
+    - start
+    - --kong-url
+    - http://kong-api-gw:8001
+    - --basic-auth $(UNAME):$(PASSWD)
     env:
     - name: PASSWD
       value: postgres-glp-test
@@ -24,7 +30,7 @@ environments:
     port: 8080
     replicas: 1
     ssl: false
-    version: 0.10.2
+    version: v3.5.0
   - application: git2consul
     env:
     - name: BRANCH
