@@ -2,6 +2,15 @@ environments:
 - name: test
   namespace: glp-test
   services:
+  - name: glp-test-kong
+    options:
+      allocatedstorage: '200'
+      dbinstanceclass: db.m3.medium
+      multiaz: 'False'
+      replicas: 2
+      version: 9.6.6
+    type: postgres
+    version: 1.0
   - name: cb1
     options:
       app_id: '100'
@@ -12,26 +21,14 @@ environments:
       volume_size: '200'
       volume_type: gp2
     type: couchbase
-  - application: kong-dashboard
-    command:
-    - ./docker/entrypoint.sh
-    - start
-    - --kong-url
-    - http://kong-api-gw:8001
-    - --basic-auth
-    - $(UNAME)=$(PASSWD)
-    env:
-    - name: PASSWD
-      value: postgres-glp-test
-    - name: UNAME
-      value: admin
-    external_url: kong-glp-test.glp.pearsondev.tech
-    httpsOnly: false
-    name: kong-admin
-    port: 8080
-    replicas: 1
-    ssl: false
-    version: v3.5.0
+  - name: zookeeper
+    options:
+      replicas: 3
+      resources_limits_cpu: 500m
+      resources_limits_memory: 512Mi
+      resources_requests_cpu: 500m
+      resources_requests_memory: 512Mi
+    type: zookeeper
   - application: git2consul
     env:
     - name: BRANCH
@@ -52,15 +49,35 @@ environments:
     port: 7500
     ssl: false
     version: '36'
-  - name: glp-test-kong
+  - name: kafka
     options:
-      allocatedstorage: '200'
-      dbinstanceclass: db.m3.medium
-      multiaz: 'False'
-      replicas: 2
-      version: 9.6.6
-    type: postgres
-    version: 1.0
+      replicas: 3
+      resources_limits_cpu: 500m
+      resources_limits_memory: 512Mi
+      resources_requests_cpu: 500m
+      resources_requests_memory: 512Mi
+      zookeeperConnect: zookeeper
+    type: kafka
+  - application: kong-dashboard
+    command:
+    - ./docker/entrypoint.sh
+    - start
+    - --kong-url
+    - http://kong-api-gw:8001
+    - --basic-auth
+    - $(UNAME)=$(PASSWD)
+    env:
+    - name: PASSWD
+      value: postgres-glp-test
+    - name: UNAME
+      value: admin
+    external_url: kong-glp-test.glp.pearsondev.tech
+    httpsOnly: false
+    name: kong-admin
+    port: 8080
+    replicas: 1
+    ssl: false
+    version: v3.5.0
   - application: kong
     env:
     - name: KONG_DATABASE
