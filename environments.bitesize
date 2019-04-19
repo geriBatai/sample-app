@@ -21,6 +21,7 @@ environments:
       volume_size: '200'
       volume_type: gp2
     type: couchbase
+    version: 1.0
   - name: glp-zookeeper
     options:
       replicas: 3
