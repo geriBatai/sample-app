@@ -60,7 +60,7 @@ environments:
       value: postgres
     - secret: KONG_PG_USER
       value: pg-glp-test-kong/pg_user
-    - name: KONG_PG_PASSWORD
+    - secret: KONG_PG_PASSWORD
       value: pg-glp-test-kong/pg_password
     - secret: KONG_PG_DATABASE
       value: pg-glp-test-kong/pg_database
