@@ -29,6 +29,7 @@ environments:
       resources_requests_cpu: 500m
       resources_requests_memory: 512Mi
     type: zookeeper
+    version: 1.0
   - application: git2consul
     env:
     - name: BRANCH
@@ -58,6 +59,7 @@ environments:
       resources_requests_memory: 512Mi
       zookeeperConnect: zookeeper
     type: kafka
+    version: 1.0
   - application: kong-dashboard
     command:
     - ./docker/entrypoint.sh
