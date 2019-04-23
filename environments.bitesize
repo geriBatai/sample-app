@@ -25,7 +25,7 @@ environments:
     - name: BRANCH
       value: glp-nf2
     - name: CONSUL_ENDPOINT
-      value: consul.glp-nf2.svc.cluster.local
+      value: consul
     - name: CONSUL_PORT
       value: '8543'
     - name: CONSUL_SECURE
@@ -38,10 +38,16 @@ environments:
       value: glp-nf2
     - secret: TOKEN
       value: consul-write
+    - name: NODE_EXTRA_CA_CERTS
+      value: /opt/ssl/ca-internal
     name: git2consul
     port: 7500
     ssl: false
     version: '36'
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
   - application: kong
     env:
     - name: KONG_DATABASE
