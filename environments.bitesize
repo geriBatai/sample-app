@@ -25,9 +25,11 @@ environments:
     - name: BRANCH
       value: glp-nf2
     - name: CONSUL_ENDPOINT
-      value: https://consul.glp-nf2.svc.cluster.local
+      value: consul.glp-nf2.svc.cluster.local
     - name: CONSUL_PORT
       value: '8543'
+    - name: CONSUL_SECURE
+      value: true
     - name: CONSUL_HTTP_SSL_VERIFY
       value: 'false'
     - name: CONFIG_KEY
