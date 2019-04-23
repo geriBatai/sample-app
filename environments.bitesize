@@ -2,6 +2,70 @@ environments:
 - name: nf2
   namespace: glp-nf2
   services:
+  - name: glp-nf2-kong
+    options:
+      allocatedstorage: '200'
+      dbinstanceclass: db.m3.medium
+      multiaz: 'False'
+      replicas: 2
+      version: 9.6.6
+    type: postgres
+    version: 1.0
+  - name: glp-zookeeper
+    options:
+      replicas: 3
+      resources_limits_cpu: 500m
+      resources_limits_memory: 512Mi
+      resources_requests_cpu: 500m
+      resources_requests_memory: 512Mi
+    type: zookeeper
+    version: 1.0
+  - application: git2consul
+    env:
+    - name: BRANCH
+      value: glp-nf2
+    - name: CONSUL_ENDPOINT
+      value: consul.glp-nf2.svc.cluster.local
+    - name: CONSUL_PORT
+      value: '8543'
+    - name: CONSUL_HTTP_SSL_VERIFY
+      value: 'false'
+    - name: CONFIG_KEY
+      value: glp-nf2/git2consul/config
+    - name: MOUNT_POINT
+      value: glp-nf2
+    - secret: TOKEN
+      value: consul-write
+    name: git2consul
+    port: 7500
+    ssl: false
+    version: '36'
+  - application: kong
+    env:
+    - name: KONG_DATABASE
+      value: postgres
+    - secret: KONG_PG_USER
+      value: postgres-glp-nf2-kong/pg_user
+    - secret: KONG_PG_PASSWORD
+      value: postgres-glp-nf2-kong/pg_password
+    - secret: KONG_PG_DATABASE
+      value: postgres-glp-nf2-kong/pg_database
+    - secret: KONG_PG_HOST
+      value: postgres-glp-nf2-kong/pg_host
+    - name: KONG_LUA_PACKAGE_PATH
+      value: /oauth-iam/glp-token-validate/lua_modules/share/lua/5.1/kong/plugins/glp-token-validate/?.lua
+    - name: KONG_CUSTOM_PLUGINS
+      value: glp-token-validate
+    external_url:
+    - api-glp-nf2.glp.pearsondev.tech
+    - lad.glp.pearsondev.tech
+    - lcd.glp.pearsondev.tech
+    httpsOnly: true
+    name: kong-api-gw
+    port: 8000,8001,8443,7946
+    replicas: 1
+    ssl: true
+    version: v2.29
   - name: cb2
     options:
       app_id: '100'
@@ -23,5 +87,35 @@ environments:
       volume_size: '200'
       volume_type: gp2
     type: couchbase
+    version: 1.0
+  - application: kong-dashboard
+    command:
+    - ./docker/entrypoint.sh
+    - start
+    - --kong-url
+    - http://kong-api-gw:8001
+    - --basic-auth
+    - $(UNAME)=$(PASSWD)
+    env:
+    - name: PASSWD
+      value: postgres-glp-nf2
+    - name: UNAME
+      value: admin
+    external_url: kong-glp-nf2.glp.pearsondev.tech
+    httpsOnly: false
+    name: kong-admin
+    port: 8080
+    replicas: 1
+    ssl: false
+    version: v3.5.0
+  - name: glp-kafka
+    options:
+      replicas: 3
+      resources_limits_cpu: 500m
+      resources_limits_memory: 512Mi
+      resources_requests_cpu: 500m
+      resources_requests_memory: 512Mi
+      zookeeperConnect: glp-zookeeper
+    type: kafka
     version: 1.0
 project: glp
