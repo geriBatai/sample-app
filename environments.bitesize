@@ -2,6 +2,52 @@ environments:
 - name: nf2
   namespace: glp-nf2
   services:
+  - name: glp-nf2-kong
+    options:
+      allocatedstorage: '200'
+      dbinstanceclass: db.m3.medium
+      multiaz: 'False'
+      replicas: 2
+      version: 9.6.6
+    type: postgres
+    version: 1.0
+  - name: glp-zookeeper
+    options:
+      replicas: 3
+      resources_limits_cpu: 500m
+      resources_limits_memory: 512Mi
+      resources_requests_cpu: 500m
+      resources_requests_memory: 512Mi
+    type: zookeeper
+    version: 1.0
+  - application: git2consul
+    env:
+    - name: BRANCH
+      value: glp-nf2
+    - name: CONSUL_ENDPOINT
+      value: consul.andy1.eu-west-1.dev
+    - name: CONSUL_PORT
+      value: '8543'
+    - name: CONSUL_SECURE
+      value: 'yes'
+    - name: CONSUL_HTTP_SSL_VERIFY
+      value: 'true'
+    - name: CONFIG_KEY
+      value: glp-nf2/git2consul/config
+    - name: MOUNT_POINT
+      value: glp-nf2
+    - secret: TOKEN
+      value: consul-write
+    - name: NODE_EXTRA_CA_CERTS
+      value: /opt/ssl/ca-internal
+    name: git2consul
+    port: 7500
+    ssl: false
+    version: '36'
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
   - application: kong
     env:
     - name: KONG_DATABASE
@@ -28,63 +74,6 @@ environments:
     replicas: 1
     ssl: true
     version: v2.29
-  - application: kong-dashboard
-    command:
-    - ./docker/entrypoint.sh
-    - start
-    - --kong-url
-    - http://kong-api-gw:8001
-    - --basic-auth
-    - $(UNAME)=$(PASSWD)
-    env:
-    - name: PASSWD
-      value: postgres-glp-nf2
-    - name: UNAME
-      value: admin
-    external_url: kong-glp-nf2.glp.pearsondev.tech
-    httpsOnly: false
-    name: kong-admin
-    port: 8080
-    replicas: 1
-    ssl: false
-    version: v3.5.0
-  - name: glp-nf2-kong
-    options:
-      allocatedstorage: '200'
-      dbinstanceclass: db.m3.medium
-      multiaz: 'False'
-      replicas: 2
-      version: 9.6.6
-    type: postgres
-    version: 1.0
-  - application: git2consul
-    env:
-    - name: BRANCH
-      value: glp-nf2
-    - name: CONSUL_ENDPOINT
-      value: consul.andy1.eu-west-1.dev
-    - name: CONSUL_PORT
-      value: '8543'
-    - name: CONSUL_SECURE
-      value: true
-    - name: CONSUL_HTTP_SSL_VERIFY
-      value: 'false'
-    - name: CONFIG_KEY
-      value: glp-nf2/git2consul/config
-    - name: MOUNT_POINT
-      value: glp-nf2
-    - secret: TOKEN
-      value: consul-write
-    - name: NODE_EXTRA_CA_CERTS
-      value: /opt/ssl/ca-internal
-    name: git2consul
-    port: 7500
-    ssl: false
-    version: '36'
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
   - name: cb2
     options:
       app_id: '100'
@@ -107,15 +96,26 @@ environments:
       volume_type: gp2
     type: couchbase
     version: 1.0
-  - name: glp-zookeeper
-    options:
-      replicas: 3
-      resources_limits_cpu: 500m
-      resources_limits_memory: 512Mi
-      resources_requests_cpu: 500m
-      resources_requests_memory: 512Mi
-    type: zookeeper
-    version: 1.0
+  - application: kong-dashboard
+    command:
+    - ./docker/entrypoint.sh
+    - start
+    - --kong-url
+    - http://kong-api-gw:8001
+    - --basic-auth
+    - $(UNAME)=$(PASSWD)
+    env:
+    - name: PASSWD
+      value: postgres-glp-nf2
+    - name: UNAME
+      value: admin
+    external_url: kong-glp-nf2.glp.pearsondev.tech
+    httpsOnly: false
+    name: kong-admin
+    port: 8080
+    replicas: 1
+    ssl: false
+    version: v3.5.0
   - name: glp-kafka
     options:
       replicas: 3
