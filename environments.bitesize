@@ -1430,11 +1430,11 @@ environments:
       app_id: '100'
       desired_capacity: ''
       full_backup_sch: 1W:Sun
-      instance_type: t1.large
+      instance_type: m5.xlarge
       team_id: dba
       volume_size: '200'
       volume_type: gp2
-    type: couchbase
+    type: cb
     version: 1.0
   - annotations:
     - name: prometheus.io/scrape
@@ -1504,11 +1504,11 @@ environments:
       app_id: '100'
       desired_capacity: ''
       full_backup_sch: 1W:Sun
-      instance_type: t1.large
+      instance_type: m5.xlarge
       team_id: dba
       volume_size: '200'
       volume_type: gp2
-    type: couchbase
+    type: cb
     version: 1.0
   - application: kong-dashboard
     command:
@@ -1729,7 +1729,7 @@ environments:
     - name: ca-internal
       path: /opt/ssl
       type: secret
-  - name: asd
+  - name: dsd
     options:
       ApplyImmediately: true
       db_instances:
