@@ -25,7 +25,7 @@ environments:
     - name: BRANCH
       value: glp-nf2
     - name: CONSUL_ENDPOINT
-      value: consul
+      value: consul.andy1.eu-west-1.dev
     - name: CONSUL_PORT
       value: '8543'
     - name: CONSUL_SECURE
