@@ -8,7 +8,7 @@ environments:
     - name: prometheus.io/path
       value: /cde/metrics
     - name: prometheus.io/port
-      value: '9510'
+      value: 9510
     application: cde
     env:
     - secret: VAULT_TOKEN
@@ -58,8 +58,8 @@ environments:
     limits:
       memory: 2048Mi
     name: cde
-    port: '9510'
-    replicas: '1'
+    port: 9510
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -80,7 +80,7 @@ environments:
     - name: prometheus.io/path
       value: /nnam/metrics
     - name: prometheus.io/port
-      value: '9190'
+      value: 9190
     application: nnam
     env:
     - secret: VAULT_TOKEN
@@ -130,8 +130,8 @@ environments:
     limits:
       memory: 2048Mi
     name: nnam
-    port: '9190'
-    replicas: '1'
+    port: 9190
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -197,7 +197,7 @@ environments:
     - name: prometheus.io/path
       value: /gep/metrics
     - name: prometheus.io/port
-      value: '9440'
+      value: 9440
     application: gep
     env:
     - secret: VAULT_TOKEN
@@ -247,8 +247,8 @@ environments:
     limits:
       memory: 2048Mi
     name: gep
-    port: '9440'
-    replicas: '1'
+    port: 9440
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -260,7 +260,7 @@ environments:
     - name: prometheus.io/path
       value: /cma/metrics
     - name: prometheus.io/port
-      value: '9550'
+      value: 9550
     application: cma
     env:
     - secret: VAULT_TOKEN
@@ -310,8 +310,8 @@ environments:
     limits:
       memory: 2048Mi
     name: cma
-    port: '9550'
-    replicas: '1'
+    port: 9550
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -323,7 +323,7 @@ environments:
     - name: prometheus.io/path
       value: /ipt/metrics
     - name: prometheus.io/port
-      value: '9320'
+      value: 9320
     application: ipt
     env:
     - secret: VAULT_TOKEN
@@ -373,8 +373,8 @@ environments:
     limits:
       memory: 2048Mi
     name: ipt
-    port: '9320'
-    replicas: '1'
+    port: 9320
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -386,7 +386,7 @@ environments:
     - name: prometheus.io/path
       value: /amp/metrics
     - name: prometheus.io/port
-      value: '9200'
+      value: 9200
     application: amp
     env:
     - secret: VAULT_TOKEN
@@ -436,8 +436,8 @@ environments:
     limits:
       memory: 2048Mi
     name: amp
-    port: '9200'
-    replicas: '1'
+    port: 9200
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -449,7 +449,7 @@ environments:
     - name: prometheus.io/path
       value: /lee/metrics
     - name: prometheus.io/port
-      value: '9060'
+      value: 9060
     application: lee
     env:
     - secret: VAULT_TOKEN
@@ -499,8 +499,8 @@ environments:
     limits:
       memory: 2048Mi
     name: lee
-    port: '9060'
-    replicas: '1'
+    port: 9060
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -512,7 +512,7 @@ environments:
     - name: prometheus.io/path
       value: /iam/metrics
     - name: prometheus.io/port
-      value: '9100'
+      value: 9100
     application: iam
     env:
     - secret: VAULT_TOKEN
@@ -562,8 +562,8 @@ environments:
     limits:
       memory: 2048Mi
     name: iam
-    port: '9100'
-    replicas: '1'
+    port: 9100
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -575,7 +575,7 @@ environments:
     - name: prometheus.io/path
       value: /imc/metrics
     - name: prometheus.io/port
-      value: '9090'
+      value: 9090
     application: imc
     env:
     - secret: VAULT_TOKEN
@@ -625,8 +625,8 @@ environments:
     limits:
       memory: 2048Mi
     name: imc
-    port: '9090'
-    replicas: '1'
+    port: 9090
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -638,7 +638,7 @@ environments:
     - name: prometheus.io/path
       value: /telemetry/metrics
     - name: prometheus.io/port
-      value: '9170'
+      value: 9170
     application: telemetry
     env:
     - secret: VAULT_TOKEN
@@ -688,8 +688,8 @@ environments:
     limits:
       memory: 2048Mi
     name: telemetry
-    port: '9170'
-    replicas: '1'
+    port: 9170
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -752,7 +752,7 @@ environments:
       memory: 2048Mi
     name: stub
     port: 8080,6000,6010,6001,6003,6016,6015,6013,6017,6018,6012,6014,6007,6009,6022,6024,6019,6023
-    replicas: '1'
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -764,7 +764,7 @@ environments:
     - name: prometheus.io/path
       value: /assignment/metrics
     - name: prometheus.io/port
-      value: '9530'
+      value: 9530
     application: assignment
     env:
     - secret: VAULT_TOKEN
@@ -814,8 +814,8 @@ environments:
     limits:
       memory: 2048Mi
     name: assignment
-    port: '9530'
-    replicas: '1'
+    port: 9530
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -827,7 +827,7 @@ environments:
     - name: prometheus.io/path
       value: /gms/metrics
     - name: prometheus.io/port
-      value: '9590'
+      value: 9590
     application: gms
     env:
     - secret: VAULT_TOKEN
@@ -877,8 +877,8 @@ environments:
     limits:
       memory: 2048Mi
     name: gms
-    port: '9590'
-    replicas: '1'
+    port: 9590
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -890,7 +890,7 @@ environments:
     - name: prometheus.io/path
       value: /autobahnpro/metrics
     - name: prometheus.io/port
-      value: '9410'
+      value: 9410
     application: autobahnpro
     env:
     - secret: VAULT_TOKEN
@@ -940,8 +940,8 @@ environments:
     limits:
       memory: 2048Mi
     name: autobahnpro
-    port: '9410'
-    replicas: '1'
+    port: 9410
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -953,7 +953,7 @@ environments:
     - name: prometheus.io/path
       value: /stub-cms/metrics
     - name: prometheus.io/port
-      value: '6010'
+      value: 6010
     application: stub-cms
     env:
     - secret: VAULT_TOKEN
@@ -1003,8 +1003,8 @@ environments:
     limits:
       memory: 2048Mi
     name: stub-cms
-    port: '6010'
-    replicas: '1'
+    port: 6010
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1016,7 +1016,7 @@ environments:
     - name: prometheus.io/path
       value: /crosscutting/metrics
     - name: prometheus.io/port
-      value: '9140'
+      value: 9140
     application: crosscutting
     env:
     - secret: VAULT_TOKEN
@@ -1066,8 +1066,8 @@ environments:
     limits:
       memory: 2048Mi
     name: crosscutting
-    port: '9140'
-    replicas: '1'
+    port: 9140
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1079,7 +1079,7 @@ environments:
     - name: prometheus.io/path
       value: /lec/metrics
     - name: prometheus.io/port
-      value: '9050'
+      value: 9050
     application: lec
     env:
     - secret: VAULT_TOKEN
@@ -1129,8 +1129,8 @@ environments:
     limits:
       memory: 2048Mi
     name: lec
-    port: '9050'
-    replicas: '1'
+    port: 9050
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1151,7 +1151,7 @@ environments:
     - name: prometheus.io/path
       value: /roster/metrics
     - name: prometheus.io/port
-      value: '9570'
+      value: 9570
     application: roster
     env:
     - secret: VAULT_TOKEN
@@ -1201,8 +1201,8 @@ environments:
     limits:
       memory: 2048Mi
     name: roster
-    port: '9570'
-    replicas: '1'
+    port: 9570
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1214,7 +1214,7 @@ environments:
     - name: prometheus.io/path
       value: /lad/metrics
     - name: prometheus.io/port
-      value: '9360'
+      value: 9360
     application: lad
     env:
     - secret: VAULT_TOKEN
@@ -1264,8 +1264,8 @@ environments:
     limits:
       memory: 2048Mi
     name: lad
-    port: '9360'
-    replicas: '1'
+    port: 9360
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1277,7 +1277,7 @@ environments:
     - name: prometheus.io/path
       value: /lae/metrics
     - name: prometheus.io/port
-      value: '9370'
+      value: 9370
     application: lae
     env:
     - secret: VAULT_TOKEN
@@ -1327,8 +1327,8 @@ environments:
     limits:
       memory: 2048Mi
     name: lae
-    port: '9370'
-    replicas: '1'
+    port: 9370
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1340,7 +1340,7 @@ environments:
     - name: prometheus.io/path
       value: /rbassignment/metrics
     - name: prometheus.io/port
-      value: '9160'
+      value: 9160
     application: rbassignment
     env:
     - secret: VAULT_TOKEN
@@ -1390,8 +1390,8 @@ environments:
     limits:
       memory: 2048Mi
     name: rbassignment
-    port: '9160'
-    replicas: '1'
+    port: 9160
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1442,7 +1442,7 @@ environments:
     - name: prometheus.io/path
       value: /lcd/metrics
     - name: prometheus.io/port
-      value: '9130'
+      value: 9130
     application: lcd
     env:
     - secret: VAULT_TOKEN
@@ -1492,8 +1492,8 @@ environments:
     limits:
       memory: 2048Mi
     name: lcd
-    port: '9130'
-    replicas: '1'
+    port: 9130
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1546,7 +1546,7 @@ environments:
     - name: prometheus.io/path
       value: /lap/metrics
     - name: prometheus.io/port
-      value: '9030'
+      value: 9030
     application: lap
     env:
     - secret: VAULT_TOKEN
@@ -1596,8 +1596,8 @@ environments:
     limits:
       memory: 2048Mi
     name: lap
-    port: '9030'
-    replicas: '1'
+    port: 9030
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1609,7 +1609,7 @@ environments:
     - name: prometheus.io/path
       value: /pdz/metrics
     - name: prometheus.io/port
-      value: '9170'
+      value: 9170
     application: pdz
     env:
     - secret: VAULT_TOKEN
@@ -1659,8 +1659,8 @@ environments:
     limits:
       memory: 2048Mi
     name: pdz
-    port: '9170'
-    replicas: '1'
+    port: 9170
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1672,7 +1672,7 @@ environments:
     - name: prometheus.io/path
       value: /stub-gms/metrics
     - name: prometheus.io/port
-      value: '6090'
+      value: 6090
     application: stub-gms
     env:
     - secret: VAULT_TOKEN
@@ -1722,14 +1722,14 @@ environments:
     limits:
       memory: 2048Mi
     name: stub-gms
-    port: '6090'
-    replicas: '1'
+    port: 6090
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
       path: /opt/ssl
       type: secret
-  - name: hg
+  - name: asd
     options:
       ApplyImmediately: true
       db_instances:
@@ -1745,7 +1745,7 @@ environments:
     - name: prometheus.io/path
       value: /rblearner/metrics
     - name: prometheus.io/port
-      value: '9300'
+      value: 9300
     application: rblearner
     env:
     - secret: VAULT_TOKEN
@@ -1795,8 +1795,8 @@ environments:
     limits:
       memory: 2048Mi
     name: rblearner
-    port: '9300'
-    replicas: '1'
+    port: 9300
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1808,7 +1808,7 @@ environments:
     - name: prometheus.io/path
       value: /rbgradebook/metrics
     - name: prometheus.io/port
-      value: '9430'
+      value: 9430
     application: rbgradebook
     env:
     - secret: VAULT_TOKEN
@@ -1858,8 +1858,8 @@ environments:
     limits:
       memory: 2048Mi
     name: rbgradebook
-    port: '9430'
-    replicas: '1'
+    port: 9430
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1871,7 +1871,7 @@ environments:
     - name: prometheus.io/path
       value: /registrar/metrics
     - name: prometheus.io/port
-      value: '9070'
+      value: 9070
     application: registrar
     env:
     - secret: VAULT_TOKEN
@@ -1921,8 +1921,8 @@ environments:
     limits:
       memory: 2048Mi
     name: registrar
-    port: '9070'
-    replicas: '1'
+    port: 9070
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1934,7 +1934,7 @@ environments:
     - name: prometheus.io/path
       value: /cms/metrics
     - name: prometheus.io/port
-      value: '9110'
+      value: 9110
     application: cms
     env:
     - secret: VAULT_TOKEN
@@ -1984,8 +1984,8 @@ environments:
     limits:
       memory: 2048Mi
     name: cms
-    port: '9110'
-    replicas: '1'
+    port: 9110
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
@@ -1997,7 +1997,7 @@ environments:
     - name: prometheus.io/path
       value: /lpb/metrics
     - name: prometheus.io/port
-      value: '9080'
+      value: 9080
     application: lpb
     env:
     - secret: VAULT_TOKEN
@@ -2047,8 +2047,8 @@ environments:
     limits:
       memory: 2048Mi
     name: lpb
-    port: '9080'
-    replicas: '1'
+    port: 9080
+    replicas: 1
     ssl: false
     volumes:
     - name: ca-internal
