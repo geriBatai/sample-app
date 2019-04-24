@@ -60,7 +60,7 @@ environments:
   - application: git2consul-custom
     env:
     - name: BRANCH
-      value: glp-nf2
+      value: master
     - name: CONSUL_ENDPOINT
       value: consul.andy1.eu-west-1.dev
     - name: CONSUL_PORT
