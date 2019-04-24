@@ -1413,6 +1413,8 @@ environments:
       value: glp-nf2/git2consul/config
     - name: MOUNT_POINT
       value: glp-nf2
+    - secret: TOKEN
+      value: consul-write
     - name: NODE_EXTRA_CA_CERTS
       value: /opt/ssl/ca-internal
     name: git2consul
@@ -1727,7 +1729,7 @@ environments:
       - name: ca-internal
         path: /opt/ssl
         type: secret
-  - name: asd
+  - name: sadf
     options:
       ApplyImmediately: true
       db_instances:
