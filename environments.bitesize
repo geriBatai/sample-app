@@ -57,7 +57,7 @@ environments:
       version: 9.6.6
     type: postgres
     version: 1.0
-  - application: git2consul
+  - application: git2consul-custom
     env:
     - name: BRANCH
       value: glp-nf2
@@ -80,7 +80,7 @@ environments:
     name: git2consul
     port: 7500
     ssl: false
-    version: '36'
+    version: 10.15.2-60
     volumes:
     - name: ca-internal
       path: /opt/ssl
