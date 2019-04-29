@@ -28,9 +28,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//cde-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/cde-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: cde-service
     - name: container_name
@@ -101,9 +101,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//nnam-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/nnam-service
     - name: PREFIX_DB
-      value: /namespace//global/cb2
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb2
     - name: service_name
       value: nnam-service
     - name: container_name
@@ -219,9 +219,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//gep-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/gep-service
     - name: PREFIX_DB
-      value: /namespace//global/cb2
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb2
     - name: service_name
       value: gep-service
     - name: container_name
@@ -283,9 +283,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//cma-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/cma-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: cma-service
     - name: container_name
@@ -347,9 +347,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//ipt-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/ipt-service
     - name: PREFIX_DB
-      value: /namespace//global/cb2
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb2
     - name: service_name
       value: ipt-service
     - name: container_name
@@ -411,9 +411,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//amp-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/amp-service
     - name: PREFIX_DB
-      value: /namespace//global/cb2
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb2
     - name: service_name
       value: amp-service
     - name: container_name
@@ -475,9 +475,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//lee-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/lee-service
     - name: PREFIX_DB
-      value: /namespace//global/cb2
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb2
     - name: service_name
       value: lee-service
     - name: container_name
@@ -539,9 +539,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//iam-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/iam-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: iam-service
     - name: container_name
@@ -603,9 +603,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//imc-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/imc-service
     - name: PREFIX_DB
-      value: /namespace//global/cb2
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb2
     - name: service_name
       value: imc-service
     - name: container_name
@@ -667,9 +667,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//telemetry-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/telemetry-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: telemetry-service
     - name: container_name
@@ -731,9 +731,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//stub-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/stub-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: stub-service
     - name: container_name
@@ -795,9 +795,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//assignment-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/assignment-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: assignment-service
     - name: container_name
@@ -859,9 +859,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//gms-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/gms-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: gms-service
     - name: container_name
@@ -923,9 +923,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//autobahnpro-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/autobahnpro-service
     - name: PREFIX_DB
-      value: /namespace//global/cb2
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb2
     - name: service_name
       value: autobahnpro-service
     - name: container_name
@@ -995,9 +995,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//stub-cms-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/stub-cms-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: stub-cms-service
     - name: container_name
@@ -1059,9 +1059,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//crosscutting-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/crosscutting-service
     - name: PREFIX_DB
-      value: /namespace//global/cb2
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb2
     - name: service_name
       value: crosscutting-service
     - name: container_name
@@ -1123,9 +1123,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//lec-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/lec-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: lec-service
     - name: container_name
@@ -1196,9 +1196,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//roster-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/roster-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: roster-service
     - name: container_name
@@ -1260,9 +1260,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//lad-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/lad-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: lad-service
     - name: container_name
@@ -1324,9 +1324,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//lae-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/lae-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: lae-service
     - name: container_name
@@ -1388,9 +1388,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//rbassignment-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/rbassignment-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: rbassignment-service
     - name: container_name
@@ -1491,9 +1491,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//lcd-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/lcd-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: lcd-service
     - name: container_name
@@ -1596,9 +1596,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//lap-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/lap-service
     - name: PREFIX_DB
-      value: /namespace//global/cb2
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb2
     - name: service_name
       value: lap-service
     - name: container_name
@@ -1660,9 +1660,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//pdz-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/pdz-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: pdz-service
     - name: container_name
@@ -1724,9 +1724,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//stub-gms-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/stub-gms-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: stub-gms-service
     - name: container_name
@@ -1788,9 +1788,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//rblearner-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/rblearner-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: rblearner-service
     - name: container_name
@@ -1852,9 +1852,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//rbgradebook-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/rbgradebook-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: rbgradebook-service
     - name: container_name
@@ -1916,9 +1916,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//registrar-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/registrar-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: registrar-service
     - name: container_name
@@ -1980,9 +1980,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//cms-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/cms-service
     - name: PREFIX_DB
-      value: /namespace//global/cb1
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb1
     - name: service_name
       value: cms-service
     - name: container_name
@@ -2044,9 +2044,9 @@ environments:
     - name: VAULT_ADDR
       value: ''
     - name: PREFIX_MAIN
-      value: /namespace//lpb-service
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/lpb-service
     - name: PREFIX_DB
-      value: /namespace//global/cb2
+      value: <class 'jinja2.utils.Namespace'>/namespace/<class 'jinja2.utils.Namespace'>/global/cb2
     - name: service_name
       value: lpb-service
     - name: container_name
