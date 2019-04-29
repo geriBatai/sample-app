@@ -1,6 +1,6 @@
 environments:
 - name: nf2
-  namespace: glp-nf2
+  namespace: glp2-nf2
   services:
   - annotations:
     - name: prometheus.io/scrape
@@ -144,19 +144,19 @@ environments:
     - name: KONG_DATABASE
       value: postgres
     - secret: KONG_PG_USER
-      value: postgres-glp-nf2-kong/pg_user
+      value: postgres-glp2-nf2-kong/pg_user
     - secret: KONG_PG_PASSWORD
-      value: postgres-glp-nf2-kong/pg_password
+      value: postgres-glp2-nf2-kong/pg_password
     - secret: KONG_PG_DATABASE
-      value: postgres-glp-nf2-kong/pg_database
+      value: postgres-glp2-nf2-kong/pg_database
     - secret: KONG_PG_HOST
-      value: postgres-glp-nf2-kong/pg_host
+      value: postgres-glp2-nf2-kong/pg_host
     - name: KONG_LUA_PACKAGE_PATH
       value: /oauth-iam/glp-token-validate/lua_modules/share/lua/5.1/kong/plugins/glp-token-validate/?.lua
     - name: KONG_CUSTOM_PLUGINS
       value: glp-token-validate
     external_url:
-    - api-glp-nf2.glp.pearsondev.tech
+    - api-glp2-nf2.glp.pearsondev.tech
     - cde.glp.pearsondev.tech
     - nnam.glp.pearsondev.tech
     - lec.glp.pearsondev.tech
@@ -1161,7 +1161,7 @@ environments:
     - name: ca-internal
       path: /opt/ssl
       type: secret
-  - name: glp-nf2-kong
+  - name: glp2-nf2-kong
     options:
       allocatedstorage: '200'
       dbinstanceclass: db.m3.medium
@@ -1439,9 +1439,9 @@ environments:
     - name: CONSUL_HTTP_SSL_VERIFY
       value: 'true'
     - name: CONFIG_KEY
-      value: glp-nf2/git2consul/config
+      value: glp2-nf2/git2consul/config
     - name: MOUNT_POINT
-      value: glp-nf2
+      value: glp2-nf2
     - secret: TOKEN
       value: consul-write
     - name: NODE_EXTRA_CA_CERTS
@@ -1550,10 +1550,10 @@ environments:
     - $(UNAME)=$(PASSWD)
     env:
     - name: PASSWD
-      value: postgres-glp-nf2
+      value: postgres-glp2-nf2
     - name: UNAME
       value: admin
-    external_url: kong-glp-nf2.glp.pearsondev.tech
+    external_url: kong-glp2-nf2.glp.pearsondev.tech
     httpsOnly: false
     name: kong-admin
     port: 8080
@@ -2082,4 +2082,4 @@ environments:
     - name: ca-internal
       path: /opt/ssl
       type: secret
-project: glp
+project: glp2
