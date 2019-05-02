@@ -61,7 +61,6 @@ environments:
     port: 9460
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -125,7 +124,6 @@ environments:
     port: 9320
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -198,7 +196,6 @@ environments:
     port: 9190
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -262,7 +259,6 @@ environments:
     port: 9330
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -326,7 +322,6 @@ environments:
     port: 9300
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -390,7 +385,6 @@ environments:
     port: 9470
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -454,7 +448,6 @@ environments:
     port: 9200
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -528,7 +521,6 @@ environments:
     port: 9999
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -592,7 +584,6 @@ environments:
     port: 9160
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -656,7 +647,6 @@ environments:
     port: 9060
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -720,7 +710,6 @@ environments:
     port: 9100
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -784,7 +773,6 @@ environments:
     port: 9090
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -848,7 +836,6 @@ environments:
     port: 9560
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -912,7 +899,6 @@ environments:
     port: 9380
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -976,7 +962,6 @@ environments:
     port: 9390
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1040,7 +1025,6 @@ environments:
     port: 9395
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1104,7 +1088,6 @@ environments:
     port: 9030
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1168,7 +1151,6 @@ environments:
     port: 9370
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1232,7 +1214,6 @@ environments:
     port: 9999
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1296,7 +1277,6 @@ environments:
     port: 9410
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1368,7 +1348,6 @@ environments:
     port: 9375
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1432,7 +1411,6 @@ environments:
     port: 9050
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1505,7 +1483,6 @@ environments:
     port: 9570
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1569,7 +1546,6 @@ environments:
     port: 9360
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1633,7 +1609,6 @@ environments:
     port: 9530
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1697,7 +1672,6 @@ environments:
     port: 9450
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1800,7 +1774,6 @@ environments:
     port: 9310
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -1875,7 +1848,6 @@ environments:
     port: 9580
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -2021,7 +1993,6 @@ environments:
     port: 9490
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -2085,7 +2056,6 @@ environments:
     port: 9400
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -2149,7 +2119,6 @@ environments:
     port: 9480
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -2213,7 +2182,6 @@ environments:
     port: 9170
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -2277,7 +2245,6 @@ environments:
     port: 9370
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -2341,7 +2308,6 @@ environments:
     port: 9550
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -2405,7 +2371,6 @@ environments:
     port: 9430
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -2469,7 +2434,6 @@ environments:
     port: 9070
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -2533,7 +2497,6 @@ environments:
     port: 9110
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
@@ -2597,7 +2560,6 @@ environments:
     port: 9080
     replicas: 1
     ssl: false
-    version: latest
     volumes:
     - name: ca-internal
       path: /opt/ssl
