@@ -18,7 +18,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -81,7 +81,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -153,7 +153,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -216,7 +216,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -279,7 +279,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -342,7 +342,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -405,7 +405,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -478,7 +478,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -541,7 +541,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -604,7 +604,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -667,7 +667,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -730,7 +730,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -793,7 +793,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -856,7 +856,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -919,7 +919,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -982,7 +982,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1045,7 +1045,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1108,7 +1108,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1171,7 +1171,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1234,7 +1234,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1305,7 +1305,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1368,7 +1368,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1440,7 +1440,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1503,7 +1503,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1566,7 +1566,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1629,7 +1629,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1681,7 +1681,7 @@ environments:
     - name: BRANCH
       value: master
     - name: CONSUL_ENDPOINT
-      value: consul.andy3.eu-west-1.dev
+      value: consul.andy4.eu-west-1.dev
     - name: CONSUL_PORT
       value: '8543'
     - name: CONSUL_SECURE
@@ -1731,7 +1731,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1805,7 +1805,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -1950,7 +1950,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -2013,7 +2013,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -2076,7 +2076,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -2139,7 +2139,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -2202,7 +2202,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -2265,7 +2265,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -2328,7 +2328,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -2391,7 +2391,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -2454,7 +2454,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
@@ -2517,7 +2517,7 @@ environments:
     - name: CONSUL_USE_SSL
       value: 'true'
     - name: CONSUL_URL
-      value: https://consul.andy3.eu-west-1.dev:8543
+      value: https://consul.andy4.eu-west-1.dev:8543
     - name: CONSUL_PORT
       value: 8543
     - name: APP_ENV
