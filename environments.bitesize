@@ -44,9 +44,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2-user
+      value: cb-cb2/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2-pass
+      value: cb-cb2/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -107,9 +109,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2-user
+      value: cb-cb2/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2-pass
+      value: cb-cb2/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -128,6 +132,15 @@ environments:
     - name: ca-internal
       path: /opt/ssl
       type: secret
+  - name: glp-zookeeper
+    options:
+      replicas: 3
+      resources_limits_cpu: 500m
+      resources_limits_memory: 512Mi
+      resources_requests_cpu: 500m
+      resources_requests_memory: 512Mi
+    type: zookeeper
+    version: 1.0
   - annotations:
     - name: prometheus.io/scrape
       value: true
@@ -170,9 +183,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2-user
+      value: cb-cb2/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2-pass
+      value: cb-cb2/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -233,9 +248,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -258,10 +275,10 @@ environments:
     - name: prometheus.io/scrape
       value: true
     - name: prometheus.io/path
-      value: /cma/metrics
+      value: /rblearner/metrics
     - name: prometheus.io/port
-      value: 9550
-    application: cma
+      value: 9300
+    application: rblearner
     env:
     - secret: VAULT_TOKEN
       value: vault-read
@@ -280,11 +297,11 @@ environments:
     - name: VAULT_ADDR
       value: vault.kube-system.svc.cluster.local
     - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/cma-service
+      value: glp2-nf2/namespace/glp2-nf2/rblearner-service
     - name: PREFIX_DB
       value: glp2-nf2/namespace/glp2-nf2/global/cb1
     - name: service_name
-      value: cma-service
+      value: rblearner-service
     - name: container_name
       pod_field: metadata.name
     - name: environment
@@ -296,9 +313,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -309,8 +328,8 @@ environments:
       value: java-agent-lic
     limits:
       memory: 2048Mi
-    name: cma
-    port: 9550
+    name: rblearner
+    port: 9300
     replicas: 1
     ssl: false
     volumes:
@@ -359,9 +378,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2-user
+      value: cb-cb2/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2-pass
+      value: cb-cb2/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -380,6 +401,81 @@ environments:
     - name: ca-internal
       path: /opt/ssl
       type: secret
+  - annotations:
+    - name: prometheus.io/scrape
+      value: true
+    - name: prometheus.io/path
+      value: /amp/metrics
+    - name: prometheus.io/port
+      value: 9200
+    application: amp
+    env:
+    - secret: VAULT_TOKEN
+      value: vault-read
+    - secret: CONSUL_TOKEN
+      value: consul-read
+    - name: CONSUL_USE_SSL
+      value: 'true'
+    - name: CONSUL_URL
+      value: https://consul.andy4.eu-west-1.dev:8543
+    - name: CONSUL_PORT
+      value: 8543
+    - name: APP_ENV
+      value: env_properties
+    - name: VAULT_SKIP_VERIFY
+      value: 'true'
+    - name: VAULT_ADDR
+      value: vault.kube-system.svc.cluster.local
+    - name: PREFIX_MAIN
+      value: glp2-nf2/namespace/glp2-nf2/amp-service
+    - name: PREFIX_DB
+      value: glp2-nf2/namespace/glp2-nf2/global/cb2
+    - name: service_name
+      value: amp-service
+    - name: container_name
+      pod_field: metadata.name
+    - name: environment
+      pod_field: metadata.namespace
+    - name: host
+      pod_field: spec.nodeName
+    - name: namespace
+      pod_field: metadata.namespace
+    - name: container_id
+      pod_field: metadata.name
+    - secret: CLUSTER_USERNAME
+      value: cb-cb2/cb_user
+    - secret: CLUSTER_PASSWORD
+      value: cb-cb2/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2/cb_host
+    - name: CB_SSL_ENABLED
+      value: true
+    - secret: KEYTOOL_PASSWD
+      value: keytool-password
+    - name: PEM_PATH
+      value: /opt/ssl
+    - secret: JAVA_AGENT_LIC
+      value: java-agent-lic
+    limits:
+      memory: 2048Mi
+    name: amp
+    port: 9200
+    replicas: 1
+    ssl: false
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - name: glp-kafka
+    options:
+      replicas: 3
+      resources_limits_cpu: 500m
+      resources_limits_memory: 512Mi
+      resources_requests_cpu: 500m
+      resources_requests_memory: 512Mi
+      zookeeperConnect: glp-zookeeper-headless
+    type: kafka
+    version: 1.0
   - annotations:
     - name: prometheus.io/scrape
       value: true
@@ -422,9 +518,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -437,6 +535,136 @@ environments:
       memory: 2048Mi
     name: kafkatest
     port: 9999
+    replicas: 1
+    ssl: false
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - annotations:
+    - name: prometheus.io/scrape
+      value: true
+    - name: prometheus.io/path
+      value: /rbassignment/metrics
+    - name: prometheus.io/port
+      value: 9160
+    application: rbassignment
+    env:
+    - secret: VAULT_TOKEN
+      value: vault-read
+    - secret: CONSUL_TOKEN
+      value: consul-read
+    - name: CONSUL_USE_SSL
+      value: 'true'
+    - name: CONSUL_URL
+      value: https://consul.andy4.eu-west-1.dev:8543
+    - name: CONSUL_PORT
+      value: 8543
+    - name: APP_ENV
+      value: env_properties
+    - name: VAULT_SKIP_VERIFY
+      value: 'true'
+    - name: VAULT_ADDR
+      value: vault.kube-system.svc.cluster.local
+    - name: PREFIX_MAIN
+      value: glp2-nf2/namespace/glp2-nf2/rbassignment-service
+    - name: PREFIX_DB
+      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+    - name: service_name
+      value: rbassignment-service
+    - name: container_name
+      pod_field: metadata.name
+    - name: environment
+      pod_field: metadata.namespace
+    - name: host
+      pod_field: spec.nodeName
+    - name: namespace
+      pod_field: metadata.namespace
+    - name: container_id
+      pod_field: metadata.name
+    - secret: CLUSTER_USERNAME
+      value: cb-cb1/cb_user
+    - secret: CLUSTER_PASSWORD
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
+    - name: CB_SSL_ENABLED
+      value: true
+    - secret: KEYTOOL_PASSWD
+      value: keytool-password
+    - name: PEM_PATH
+      value: /opt/ssl
+    - secret: JAVA_AGENT_LIC
+      value: java-agent-lic
+    limits:
+      memory: 2048Mi
+    name: rbassignment
+    port: 9160
+    replicas: 1
+    ssl: false
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - annotations:
+    - name: prometheus.io/scrape
+      value: true
+    - name: prometheus.io/path
+      value: /lee/metrics
+    - name: prometheus.io/port
+      value: 9060
+    application: lee
+    env:
+    - secret: VAULT_TOKEN
+      value: vault-read
+    - secret: CONSUL_TOKEN
+      value: consul-read
+    - name: CONSUL_USE_SSL
+      value: 'true'
+    - name: CONSUL_URL
+      value: https://consul.andy4.eu-west-1.dev:8543
+    - name: CONSUL_PORT
+      value: 8543
+    - name: APP_ENV
+      value: env_properties
+    - name: VAULT_SKIP_VERIFY
+      value: 'true'
+    - name: VAULT_ADDR
+      value: vault.kube-system.svc.cluster.local
+    - name: PREFIX_MAIN
+      value: glp2-nf2/namespace/glp2-nf2/lee-service
+    - name: PREFIX_DB
+      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+    - name: service_name
+      value: lee-service
+    - name: container_name
+      pod_field: metadata.name
+    - name: environment
+      pod_field: metadata.namespace
+    - name: host
+      pod_field: spec.nodeName
+    - name: namespace
+      pod_field: metadata.namespace
+    - name: container_id
+      pod_field: metadata.name
+    - secret: CLUSTER_USERNAME
+      value: cb-cb1/cb_user
+    - secret: CLUSTER_PASSWORD
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
+    - name: CB_SSL_ENABLED
+      value: true
+    - secret: KEYTOOL_PASSWD
+      value: keytool-password
+    - name: PEM_PATH
+      value: /opt/ssl
+    - secret: JAVA_AGENT_LIC
+      value: java-agent-lic
+    limits:
+      memory: 2048Mi
+    name: lee
+    port: 9060
     replicas: 1
     ssl: false
     volumes:
@@ -485,9 +713,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -548,9 +778,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2-user
+      value: cb-cb2/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2-pass
+      value: cb-cb2/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -611,9 +843,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2-user
+      value: cb-cb2/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2-pass
+      value: cb-cb2/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -626,69 +860,6 @@ environments:
       memory: 2048Mi
     name: cns
     port: 9560
-    replicas: 1
-    ssl: false
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
-  - annotations:
-    - name: prometheus.io/scrape
-      value: true
-    - name: prometheus.io/path
-      value: /lms/metrics
-    - name: prometheus.io/port
-      value: 9450
-    application: lms
-    env:
-    - secret: VAULT_TOKEN
-      value: vault-read
-    - secret: CONSUL_TOKEN
-      value: consul-read
-    - name: CONSUL_USE_SSL
-      value: 'true'
-    - name: CONSUL_URL
-      value: https://consul.andy4.eu-west-1.dev:8543
-    - name: CONSUL_PORT
-      value: 8543
-    - name: APP_ENV
-      value: env_properties
-    - name: VAULT_SKIP_VERIFY
-      value: 'true'
-    - name: VAULT_ADDR
-      value: vault.kube-system.svc.cluster.local
-    - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/lms-service
-    - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb2
-    - name: service_name
-      value: lms-service
-    - name: container_name
-      pod_field: metadata.name
-    - name: environment
-      pod_field: metadata.namespace
-    - name: host
-      pod_field: spec.nodeName
-    - name: namespace
-      pod_field: metadata.namespace
-    - name: container_id
-      pod_field: metadata.name
-    - secret: CLUSTER_USERNAME
-      value: cb-cb2-user
-    - secret: CLUSTER_PASSWORD
-      value: cb-cb2-pass
-    - name: CB_SSL_ENABLED
-      value: true
-    - secret: KEYTOOL_PASSWD
-      value: keytool-password
-    - name: PEM_PATH
-      value: /opt/ssl
-    - secret: JAVA_AGENT_LIC
-      value: java-agent-lic
-    limits:
-      memory: 2048Mi
-    name: lms
-    port: 9450
     replicas: 1
     ssl: false
     volumes:
@@ -737,9 +908,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -800,9 +973,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -863,9 +1038,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2-user
+      value: cb-cb2/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2-pass
+      value: cb-cb2/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -888,10 +1065,10 @@ environments:
     - name: prometheus.io/scrape
       value: true
     - name: prometheus.io/path
-      value: /assignment/metrics
+      value: /lap/metrics
     - name: prometheus.io/port
-      value: 9530
-    application: assignment
+      value: 9030
+    application: lap
     env:
     - secret: VAULT_TOKEN
       value: vault-read
@@ -910,11 +1087,11 @@ environments:
     - name: VAULT_ADDR
       value: vault.kube-system.svc.cluster.local
     - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/assignment-service
+      value: glp2-nf2/namespace/glp2-nf2/lap-service
     - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+      value: glp2-nf2/namespace/glp2-nf2/global/cb2
     - name: service_name
-      value: assignment-service
+      value: lap-service
     - name: container_name
       pod_field: metadata.name
     - name: environment
@@ -926,9 +1103,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb2/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb2/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -939,8 +1118,73 @@ environments:
       value: java-agent-lic
     limits:
       memory: 2048Mi
-    name: assignment
-    port: 9530
+    name: lap
+    port: 9030
+    replicas: 1
+    ssl: false
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - annotations:
+    - name: prometheus.io/scrape
+      value: true
+    - name: prometheus.io/path
+      value: /lae/metrics
+    - name: prometheus.io/port
+      value: 9370
+    application: lae
+    env:
+    - secret: VAULT_TOKEN
+      value: vault-read
+    - secret: CONSUL_TOKEN
+      value: consul-read
+    - name: CONSUL_USE_SSL
+      value: 'true'
+    - name: CONSUL_URL
+      value: https://consul.andy4.eu-west-1.dev:8543
+    - name: CONSUL_PORT
+      value: 8543
+    - name: APP_ENV
+      value: env_properties
+    - name: VAULT_SKIP_VERIFY
+      value: 'true'
+    - name: VAULT_ADDR
+      value: vault.kube-system.svc.cluster.local
+    - name: PREFIX_MAIN
+      value: glp2-nf2/namespace/glp2-nf2/lae-service
+    - name: PREFIX_DB
+      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+    - name: service_name
+      value: lae-service
+    - name: container_name
+      pod_field: metadata.name
+    - name: environment
+      pod_field: metadata.namespace
+    - name: host
+      pod_field: spec.nodeName
+    - name: namespace
+      pod_field: metadata.namespace
+    - name: container_id
+      pod_field: metadata.name
+    - secret: CLUSTER_USERNAME
+      value: cb-cb1/cb_user
+    - secret: CLUSTER_PASSWORD
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
+    - name: CB_SSL_ENABLED
+      value: true
+    - secret: KEYTOOL_PASSWD
+      value: keytool-password
+    - name: PEM_PATH
+      value: /opt/ssl
+    - secret: JAVA_AGENT_LIC
+      value: java-agent-lic
+    limits:
+      memory: 2048Mi
+    name: lae
+    port: 9370
     replicas: 1
     ssl: false
     volumes:
@@ -989,9 +1233,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1052,9 +1298,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2-user
+      value: cb-cb2/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2-pass
+      value: cb-cb2/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1073,69 +1321,14 @@ environments:
     - name: ca-internal
       path: /opt/ssl
       type: secret
-  - annotations:
-    - name: prometheus.io/scrape
-      value: true
-    - name: prometheus.io/path
-      value: /assessment/metrics
-    - name: prometheus.io/port
-      value: 9370
-    application: assessment
-    env:
-    - secret: VAULT_TOKEN
-      value: vault-read
-    - secret: CONSUL_TOKEN
-      value: consul-read
-    - name: CONSUL_USE_SSL
-      value: 'true'
-    - name: CONSUL_URL
-      value: https://consul.andy4.eu-west-1.dev:8543
-    - name: CONSUL_PORT
-      value: 8543
-    - name: APP_ENV
-      value: env_properties
-    - name: VAULT_SKIP_VERIFY
-      value: 'true'
-    - name: VAULT_ADDR
-      value: vault.kube-system.svc.cluster.local
-    - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/assessment-service
-    - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
-    - name: service_name
-      value: assessment-service
-    - name: container_name
-      pod_field: metadata.name
-    - name: environment
-      pod_field: metadata.namespace
-    - name: host
-      pod_field: spec.nodeName
-    - name: namespace
-      pod_field: metadata.namespace
-    - name: container_id
-      pod_field: metadata.name
-    - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
-    - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
-    - name: CB_SSL_ENABLED
-      value: true
-    - secret: KEYTOOL_PASSWD
-      value: keytool-password
-    - name: PEM_PATH
-      value: /opt/ssl
-    - secret: JAVA_AGENT_LIC
-      value: java-agent-lic
-    limits:
-      memory: 2048Mi
-    name: assessment
-    port: 9370
-    replicas: 1
-    ssl: false
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
+  - name: neptune1
+    options:
+      ApplyImmediately: true
+      db_instances:
+      - db_instance_class: db.r4.2xlarge
+        db_name: db1
+    type: neptune
+    version: 1.0
   - annotations:
     - name: prometheus.io/scrape
       value: true
@@ -1178,9 +1371,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1199,6 +1394,540 @@ environments:
     - name: ca-internal
       path: /opt/ssl
       type: secret
+  - annotations:
+    - name: prometheus.io/scrape
+      value: true
+    - name: prometheus.io/path
+      value: /lec/metrics
+    - name: prometheus.io/port
+      value: 9050
+    application: lec
+    env:
+    - secret: VAULT_TOKEN
+      value: vault-read
+    - secret: CONSUL_TOKEN
+      value: consul-read
+    - name: CONSUL_USE_SSL
+      value: 'true'
+    - name: CONSUL_URL
+      value: https://consul.andy4.eu-west-1.dev:8543
+    - name: CONSUL_PORT
+      value: 8543
+    - name: APP_ENV
+      value: env_properties
+    - name: VAULT_SKIP_VERIFY
+      value: 'true'
+    - name: VAULT_ADDR
+      value: vault.kube-system.svc.cluster.local
+    - name: PREFIX_MAIN
+      value: glp2-nf2/namespace/glp2-nf2/lec-service
+    - name: PREFIX_DB
+      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+    - name: service_name
+      value: lec-service
+    - name: container_name
+      pod_field: metadata.name
+    - name: environment
+      pod_field: metadata.namespace
+    - name: host
+      pod_field: spec.nodeName
+    - name: namespace
+      pod_field: metadata.namespace
+    - name: container_id
+      pod_field: metadata.name
+    - secret: CLUSTER_USERNAME
+      value: cb-cb1/cb_user
+    - secret: CLUSTER_PASSWORD
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
+    - name: CB_SSL_ENABLED
+      value: true
+    - secret: KEYTOOL_PASSWD
+      value: keytool-password
+    - name: PEM_PATH
+      value: /opt/ssl
+    - secret: JAVA_AGENT_LIC
+      value: java-agent-lic
+    limits:
+      memory: 2048Mi
+    name: lec
+    port: 9050
+    replicas: 1
+    ssl: false
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - name: glp2-nf2-kong
+    options:
+      allocatedstorage: '200'
+      dbinstanceclass: db.m3.medium
+      multiaz: 'False'
+      replicas: 2
+      version: 9.6.6
+    type: postgres
+    version: 1.0
+  - annotations:
+    - name: prometheus.io/scrape
+      value: true
+    - name: prometheus.io/path
+      value: /roster/metrics
+    - name: prometheus.io/port
+      value: 9570
+    application: roster
+    env:
+    - secret: VAULT_TOKEN
+      value: vault-read
+    - secret: CONSUL_TOKEN
+      value: consul-read
+    - name: CONSUL_USE_SSL
+      value: 'true'
+    - name: CONSUL_URL
+      value: https://consul.andy4.eu-west-1.dev:8543
+    - name: CONSUL_PORT
+      value: 8543
+    - name: APP_ENV
+      value: env_properties
+    - name: VAULT_SKIP_VERIFY
+      value: 'true'
+    - name: VAULT_ADDR
+      value: vault.kube-system.svc.cluster.local
+    - name: PREFIX_MAIN
+      value: glp2-nf2/namespace/glp2-nf2/roster-service
+    - name: PREFIX_DB
+      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+    - name: service_name
+      value: roster-service
+    - name: container_name
+      pod_field: metadata.name
+    - name: environment
+      pod_field: metadata.namespace
+    - name: host
+      pod_field: spec.nodeName
+    - name: namespace
+      pod_field: metadata.namespace
+    - name: container_id
+      pod_field: metadata.name
+    - secret: CLUSTER_USERNAME
+      value: cb-cb1/cb_user
+    - secret: CLUSTER_PASSWORD
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
+    - name: CB_SSL_ENABLED
+      value: true
+    - secret: KEYTOOL_PASSWD
+      value: keytool-password
+    - name: PEM_PATH
+      value: /opt/ssl
+    - secret: JAVA_AGENT_LIC
+      value: java-agent-lic
+    limits:
+      memory: 2048Mi
+    name: roster
+    port: 9570
+    replicas: 1
+    ssl: false
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - annotations:
+    - name: prometheus.io/scrape
+      value: true
+    - name: prometheus.io/path
+      value: /lad/metrics
+    - name: prometheus.io/port
+      value: 9360
+    application: lad
+    env:
+    - secret: VAULT_TOKEN
+      value: vault-read
+    - secret: CONSUL_TOKEN
+      value: consul-read
+    - name: CONSUL_USE_SSL
+      value: 'true'
+    - name: CONSUL_URL
+      value: https://consul.andy4.eu-west-1.dev:8543
+    - name: CONSUL_PORT
+      value: 8543
+    - name: APP_ENV
+      value: env_properties
+    - name: VAULT_SKIP_VERIFY
+      value: 'true'
+    - name: VAULT_ADDR
+      value: vault.kube-system.svc.cluster.local
+    - name: PREFIX_MAIN
+      value: glp2-nf2/namespace/glp2-nf2/lad-service
+    - name: PREFIX_DB
+      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+    - name: service_name
+      value: lad-service
+    - name: container_name
+      pod_field: metadata.name
+    - name: environment
+      pod_field: metadata.namespace
+    - name: host
+      pod_field: spec.nodeName
+    - name: namespace
+      pod_field: metadata.namespace
+    - name: container_id
+      pod_field: metadata.name
+    - secret: CLUSTER_USERNAME
+      value: cb-cb1/cb_user
+    - secret: CLUSTER_PASSWORD
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
+    - name: CB_SSL_ENABLED
+      value: true
+    - secret: KEYTOOL_PASSWD
+      value: keytool-password
+    - name: PEM_PATH
+      value: /opt/ssl
+    - secret: JAVA_AGENT_LIC
+      value: java-agent-lic
+    limits:
+      memory: 2048Mi
+    name: lad
+    port: 9360
+    replicas: 1
+    ssl: false
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - annotations:
+    - name: prometheus.io/scrape
+      value: true
+    - name: prometheus.io/path
+      value: /assignment/metrics
+    - name: prometheus.io/port
+      value: 9530
+    application: assignment
+    env:
+    - secret: VAULT_TOKEN
+      value: vault-read
+    - secret: CONSUL_TOKEN
+      value: consul-read
+    - name: CONSUL_USE_SSL
+      value: 'true'
+    - name: CONSUL_URL
+      value: https://consul.andy4.eu-west-1.dev:8543
+    - name: CONSUL_PORT
+      value: 8543
+    - name: APP_ENV
+      value: env_properties
+    - name: VAULT_SKIP_VERIFY
+      value: 'true'
+    - name: VAULT_ADDR
+      value: vault.kube-system.svc.cluster.local
+    - name: PREFIX_MAIN
+      value: glp2-nf2/namespace/glp2-nf2/assignment-service
+    - name: PREFIX_DB
+      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+    - name: service_name
+      value: assignment-service
+    - name: container_name
+      pod_field: metadata.name
+    - name: environment
+      pod_field: metadata.namespace
+    - name: host
+      pod_field: spec.nodeName
+    - name: namespace
+      pod_field: metadata.namespace
+    - name: container_id
+      pod_field: metadata.name
+    - secret: CLUSTER_USERNAME
+      value: cb-cb1/cb_user
+    - secret: CLUSTER_PASSWORD
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
+    - name: CB_SSL_ENABLED
+      value: true
+    - secret: KEYTOOL_PASSWD
+      value: keytool-password
+    - name: PEM_PATH
+      value: /opt/ssl
+    - secret: JAVA_AGENT_LIC
+      value: java-agent-lic
+    limits:
+      memory: 2048Mi
+    name: assignment
+    port: 9530
+    replicas: 1
+    ssl: false
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - annotations:
+    - name: prometheus.io/scrape
+      value: true
+    - name: prometheus.io/path
+      value: /lms/metrics
+    - name: prometheus.io/port
+      value: 9450
+    application: lms
+    env:
+    - secret: VAULT_TOKEN
+      value: vault-read
+    - secret: CONSUL_TOKEN
+      value: consul-read
+    - name: CONSUL_USE_SSL
+      value: 'true'
+    - name: CONSUL_URL
+      value: https://consul.andy4.eu-west-1.dev:8543
+    - name: CONSUL_PORT
+      value: 8543
+    - name: APP_ENV
+      value: env_properties
+    - name: VAULT_SKIP_VERIFY
+      value: 'true'
+    - name: VAULT_ADDR
+      value: vault.kube-system.svc.cluster.local
+    - name: PREFIX_MAIN
+      value: glp2-nf2/namespace/glp2-nf2/lms-service
+    - name: PREFIX_DB
+      value: glp2-nf2/namespace/glp2-nf2/global/cb2
+    - name: service_name
+      value: lms-service
+    - name: container_name
+      pod_field: metadata.name
+    - name: environment
+      pod_field: metadata.namespace
+    - name: host
+      pod_field: spec.nodeName
+    - name: namespace
+      pod_field: metadata.namespace
+    - name: container_id
+      pod_field: metadata.name
+    - secret: CLUSTER_USERNAME
+      value: cb-cb2/cb_user
+    - secret: CLUSTER_PASSWORD
+      value: cb-cb2/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2/cb_host
+    - name: CB_SSL_ENABLED
+      value: true
+    - secret: KEYTOOL_PASSWD
+      value: keytool-password
+    - name: PEM_PATH
+      value: /opt/ssl
+    - secret: JAVA_AGENT_LIC
+      value: java-agent-lic
+    limits:
+      memory: 2048Mi
+    name: lms
+    port: 9450
+    replicas: 1
+    ssl: false
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - application: git2consul-custom
+    env:
+    - name: BRANCH
+      value: master
+    - name: CONSUL_ENDPOINT
+      value: consul.andy4.eu-west-1.dev
+    - name: CONSUL_PORT
+      value: '8543'
+    - name: CONSUL_SECURE
+      value: 'yes'
+    - name: CONSUL_HTTP_SSL_VERIFY
+      value: 'true'
+    - name: CONFIG_KEY
+      value: glp2-nf2/git2consul/config
+    - name: MOUNT_POINT
+      value: glp2-nf2
+    - secret: TOKEN
+      value: consul-write
+    - name: NODE_EXTRA_CA_CERTS
+      value: /opt/ssl/ca-internal
+    name: git2consul
+    port: 7500
+    ssl: false
+    version: 10.15.2-60
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - name: cb2
+    options:
+      app_id: '100'
+      desired_capacity: ''
+      full_backup_sch: 1W:Sun
+      instance_type: m5.xlarge
+      team_id: dba
+      volume_size: '200'
+      volume_type: gp2
+    type: cb
+    version: 1.0
+  - annotations:
+    - name: prometheus.io/scrape
+      value: true
+    - name: prometheus.io/path
+      value: /lcd/metrics
+    - name: prometheus.io/port
+      value: 9310
+    application: lcd
+    env:
+    - secret: VAULT_TOKEN
+      value: vault-read
+    - secret: CONSUL_TOKEN
+      value: consul-read
+    - name: CONSUL_USE_SSL
+      value: 'true'
+    - name: CONSUL_URL
+      value: https://consul.andy4.eu-west-1.dev:8543
+    - name: CONSUL_PORT
+      value: 8543
+    - name: APP_ENV
+      value: env_properties
+    - name: VAULT_SKIP_VERIFY
+      value: 'true'
+    - name: VAULT_ADDR
+      value: vault.kube-system.svc.cluster.local
+    - name: PREFIX_MAIN
+      value: glp2-nf2/namespace/glp2-nf2/lcd-service
+    - name: PREFIX_DB
+      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+    - name: service_name
+      value: lcd-service
+    - name: container_name
+      pod_field: metadata.name
+    - name: environment
+      pod_field: metadata.namespace
+    - name: host
+      pod_field: spec.nodeName
+    - name: namespace
+      pod_field: metadata.namespace
+    - name: container_id
+      pod_field: metadata.name
+    - secret: CLUSTER_USERNAME
+      value: cb-cb1/cb_user
+    - secret: CLUSTER_PASSWORD
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
+    - name: CB_SSL_ENABLED
+      value: true
+    - secret: KEYTOOL_PASSWD
+      value: keytool-password
+    - name: PEM_PATH
+      value: /opt/ssl
+    - secret: JAVA_AGENT_LIC
+      value: java-agent-lic
+    limits:
+      memory: 2048Mi
+    name: lcd
+    port: 9310
+    replicas: 1
+    ssl: false
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - name: cb1
+    options:
+      app_id: '100'
+      desired_capacity: ''
+      full_backup_sch: 1W:Sun
+      instance_type: m5.xlarge
+      team_id: dba
+      volume_size: '200'
+      volume_type: gp2
+    type: cb
+    version: 1.0
+  - annotations:
+    - name: prometheus.io/scrape
+      value: true
+    - name: prometheus.io/path
+      value: /pla/metrics
+    - name: prometheus.io/port
+      value: 9580
+    application: pla
+    env:
+    - secret: VAULT_TOKEN
+      value: vault-read
+    - secret: CONSUL_TOKEN
+      value: consul-read
+    - name: CONSUL_USE_SSL
+      value: 'true'
+    - name: CONSUL_URL
+      value: https://consul.andy4.eu-west-1.dev:8543
+    - name: CONSUL_PORT
+      value: 8543
+    - name: APP_ENV
+      value: env_properties
+    - name: VAULT_SKIP_VERIFY
+      value: 'true'
+    - name: VAULT_ADDR
+      value: vault.kube-system.svc.cluster.local
+    - name: PREFIX_MAIN
+      value: glp2-nf2/namespace/glp2-nf2/pla-service
+    - name: PREFIX_DB
+      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+    - name: service_name
+      value: pla-service
+    - name: container_name
+      pod_field: metadata.name
+    - name: environment
+      pod_field: metadata.namespace
+    - name: host
+      pod_field: spec.nodeName
+    - name: namespace
+      pod_field: metadata.namespace
+    - name: container_id
+      pod_field: metadata.name
+    - secret: CLUSTER_USERNAME
+      value: cb-cb1/cb_user
+    - secret: CLUSTER_PASSWORD
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
+    - name: CB_SSL_ENABLED
+      value: true
+    - secret: KEYTOOL_PASSWD
+      value: keytool-password
+    - name: PEM_PATH
+      value: /opt/ssl
+    - secret: JAVA_AGENT_LIC
+      value: java-agent-lic
+    limits:
+      memory: 2048Mi
+    name: pla
+    port: 9580
+    replicas: 1
+    ssl: false
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - application: kong-dashboard
+    command:
+    - ./docker/entrypoint.sh
+    - start
+    - --kong-url
+    - http://kong-api-gw:8001
+    - --basic-auth
+    - $(UNAME)=$(PASSWD)
+    env:
+    - name: PASSWD
+      value: postgres-glp2-nf2
+    - name: UNAME
+      value: admin
+    external_url: kong-glp2-nf2.glp.pearsondev.tech
+    httpsOnly: false
+    name: kong-admin
+    port: 8080
+    replicas: 1
+    ssl: false
+    version: v3.5.0
   - application: kong
     env:
     - name: KONG_DATABASE
@@ -1265,629 +1994,6 @@ environments:
     - name: prometheus.io/scrape
       value: true
     - name: prometheus.io/path
-      value: /lec/metrics
-    - name: prometheus.io/port
-      value: 9050
-    application: lec
-    env:
-    - secret: VAULT_TOKEN
-      value: vault-read
-    - secret: CONSUL_TOKEN
-      value: consul-read
-    - name: CONSUL_USE_SSL
-      value: 'true'
-    - name: CONSUL_URL
-      value: https://consul.andy4.eu-west-1.dev:8543
-    - name: CONSUL_PORT
-      value: 8543
-    - name: APP_ENV
-      value: env_properties
-    - name: VAULT_SKIP_VERIFY
-      value: 'true'
-    - name: VAULT_ADDR
-      value: vault.kube-system.svc.cluster.local
-    - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/lec-service
-    - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
-    - name: service_name
-      value: lec-service
-    - name: container_name
-      pod_field: metadata.name
-    - name: environment
-      pod_field: metadata.namespace
-    - name: host
-      pod_field: spec.nodeName
-    - name: namespace
-      pod_field: metadata.namespace
-    - name: container_id
-      pod_field: metadata.name
-    - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
-    - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
-    - name: CB_SSL_ENABLED
-      value: true
-    - secret: KEYTOOL_PASSWD
-      value: keytool-password
-    - name: PEM_PATH
-      value: /opt/ssl
-    - secret: JAVA_AGENT_LIC
-      value: java-agent-lic
-    limits:
-      memory: 2048Mi
-    name: lec
-    port: 9050
-    replicas: 1
-    ssl: false
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
-  - annotations:
-    - name: prometheus.io/scrape
-      value: true
-    - name: prometheus.io/path
-      value: /lee/metrics
-    - name: prometheus.io/port
-      value: 9060
-    application: lee
-    env:
-    - secret: VAULT_TOKEN
-      value: vault-read
-    - secret: CONSUL_TOKEN
-      value: consul-read
-    - name: CONSUL_USE_SSL
-      value: 'true'
-    - name: CONSUL_URL
-      value: https://consul.andy4.eu-west-1.dev:8543
-    - name: CONSUL_PORT
-      value: 8543
-    - name: APP_ENV
-      value: env_properties
-    - name: VAULT_SKIP_VERIFY
-      value: 'true'
-    - name: VAULT_ADDR
-      value: vault.kube-system.svc.cluster.local
-    - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/lee-service
-    - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
-    - name: service_name
-      value: lee-service
-    - name: container_name
-      pod_field: metadata.name
-    - name: environment
-      pod_field: metadata.namespace
-    - name: host
-      pod_field: spec.nodeName
-    - name: namespace
-      pod_field: metadata.namespace
-    - name: container_id
-      pod_field: metadata.name
-    - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
-    - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
-    - name: CB_SSL_ENABLED
-      value: true
-    - secret: KEYTOOL_PASSWD
-      value: keytool-password
-    - name: PEM_PATH
-      value: /opt/ssl
-    - secret: JAVA_AGENT_LIC
-      value: java-agent-lic
-    limits:
-      memory: 2048Mi
-    name: lee
-    port: 9060
-    replicas: 1
-    ssl: false
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
-  - annotations:
-    - name: prometheus.io/scrape
-      value: true
-    - name: prometheus.io/path
-      value: /roster/metrics
-    - name: prometheus.io/port
-      value: 9570
-    application: roster
-    env:
-    - secret: VAULT_TOKEN
-      value: vault-read
-    - secret: CONSUL_TOKEN
-      value: consul-read
-    - name: CONSUL_USE_SSL
-      value: 'true'
-    - name: CONSUL_URL
-      value: https://consul.andy4.eu-west-1.dev:8543
-    - name: CONSUL_PORT
-      value: 8543
-    - name: APP_ENV
-      value: env_properties
-    - name: VAULT_SKIP_VERIFY
-      value: 'true'
-    - name: VAULT_ADDR
-      value: vault.kube-system.svc.cluster.local
-    - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/roster-service
-    - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
-    - name: service_name
-      value: roster-service
-    - name: container_name
-      pod_field: metadata.name
-    - name: environment
-      pod_field: metadata.namespace
-    - name: host
-      pod_field: spec.nodeName
-    - name: namespace
-      pod_field: metadata.namespace
-    - name: container_id
-      pod_field: metadata.name
-    - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
-    - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
-    - name: CB_SSL_ENABLED
-      value: true
-    - secret: KEYTOOL_PASSWD
-      value: keytool-password
-    - name: PEM_PATH
-      value: /opt/ssl
-    - secret: JAVA_AGENT_LIC
-      value: java-agent-lic
-    limits:
-      memory: 2048Mi
-    name: roster
-    port: 9570
-    replicas: 1
-    ssl: false
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
-  - annotations:
-    - name: prometheus.io/scrape
-      value: true
-    - name: prometheus.io/path
-      value: /lad/metrics
-    - name: prometheus.io/port
-      value: 9360
-    application: lad
-    env:
-    - secret: VAULT_TOKEN
-      value: vault-read
-    - secret: CONSUL_TOKEN
-      value: consul-read
-    - name: CONSUL_USE_SSL
-      value: 'true'
-    - name: CONSUL_URL
-      value: https://consul.andy4.eu-west-1.dev:8543
-    - name: CONSUL_PORT
-      value: 8543
-    - name: APP_ENV
-      value: env_properties
-    - name: VAULT_SKIP_VERIFY
-      value: 'true'
-    - name: VAULT_ADDR
-      value: vault.kube-system.svc.cluster.local
-    - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/lad-service
-    - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
-    - name: service_name
-      value: lad-service
-    - name: container_name
-      pod_field: metadata.name
-    - name: environment
-      pod_field: metadata.namespace
-    - name: host
-      pod_field: spec.nodeName
-    - name: namespace
-      pod_field: metadata.namespace
-    - name: container_id
-      pod_field: metadata.name
-    - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
-    - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
-    - name: CB_SSL_ENABLED
-      value: true
-    - secret: KEYTOOL_PASSWD
-      value: keytool-password
-    - name: PEM_PATH
-      value: /opt/ssl
-    - secret: JAVA_AGENT_LIC
-      value: java-agent-lic
-    limits:
-      memory: 2048Mi
-    name: lad
-    port: 9360
-    replicas: 1
-    ssl: false
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
-  - annotations:
-    - name: prometheus.io/scrape
-      value: true
-    - name: prometheus.io/path
-      value: /lae/metrics
-    - name: prometheus.io/port
-      value: 9370
-    application: lae
-    env:
-    - secret: VAULT_TOKEN
-      value: vault-read
-    - secret: CONSUL_TOKEN
-      value: consul-read
-    - name: CONSUL_USE_SSL
-      value: 'true'
-    - name: CONSUL_URL
-      value: https://consul.andy4.eu-west-1.dev:8543
-    - name: CONSUL_PORT
-      value: 8543
-    - name: APP_ENV
-      value: env_properties
-    - name: VAULT_SKIP_VERIFY
-      value: 'true'
-    - name: VAULT_ADDR
-      value: vault.kube-system.svc.cluster.local
-    - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/lae-service
-    - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
-    - name: service_name
-      value: lae-service
-    - name: container_name
-      pod_field: metadata.name
-    - name: environment
-      pod_field: metadata.namespace
-    - name: host
-      pod_field: spec.nodeName
-    - name: namespace
-      pod_field: metadata.namespace
-    - name: container_id
-      pod_field: metadata.name
-    - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
-    - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
-    - name: CB_SSL_ENABLED
-      value: true
-    - secret: KEYTOOL_PASSWD
-      value: keytool-password
-    - name: PEM_PATH
-      value: /opt/ssl
-    - secret: JAVA_AGENT_LIC
-      value: java-agent-lic
-    limits:
-      memory: 2048Mi
-    name: lae
-    port: 9370
-    replicas: 1
-    ssl: false
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
-  - annotations:
-    - name: prometheus.io/scrape
-      value: true
-    - name: prometheus.io/path
-      value: /rbassignment/metrics
-    - name: prometheus.io/port
-      value: 9160
-    application: rbassignment
-    env:
-    - secret: VAULT_TOKEN
-      value: vault-read
-    - secret: CONSUL_TOKEN
-      value: consul-read
-    - name: CONSUL_USE_SSL
-      value: 'true'
-    - name: CONSUL_URL
-      value: https://consul.andy4.eu-west-1.dev:8543
-    - name: CONSUL_PORT
-      value: 8543
-    - name: APP_ENV
-      value: env_properties
-    - name: VAULT_SKIP_VERIFY
-      value: 'true'
-    - name: VAULT_ADDR
-      value: vault.kube-system.svc.cluster.local
-    - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/rbassignment-service
-    - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
-    - name: service_name
-      value: rbassignment-service
-    - name: container_name
-      pod_field: metadata.name
-    - name: environment
-      pod_field: metadata.namespace
-    - name: host
-      pod_field: spec.nodeName
-    - name: namespace
-      pod_field: metadata.namespace
-    - name: container_id
-      pod_field: metadata.name
-    - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
-    - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
-    - name: CB_SSL_ENABLED
-      value: true
-    - secret: KEYTOOL_PASSWD
-      value: keytool-password
-    - name: PEM_PATH
-      value: /opt/ssl
-    - secret: JAVA_AGENT_LIC
-      value: java-agent-lic
-    limits:
-      memory: 2048Mi
-    name: rbassignment
-    port: 9160
-    replicas: 1
-    ssl: false
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
-  - application: git2consul-custom
-    env:
-    - name: BRANCH
-      value: master
-    - name: CONSUL_ENDPOINT
-      value: consul.andy4.eu-west-1.dev
-    - name: CONSUL_PORT
-      value: '8543'
-    - name: CONSUL_SECURE
-      value: 'yes'
-    - name: CONSUL_HTTP_SSL_VERIFY
-      value: 'true'
-    - name: CONFIG_KEY
-      value: glp2-nf2/git2consul/config
-    - name: MOUNT_POINT
-      value: glp2-nf2
-    - secret: TOKEN
-      value: consul-write
-    - name: NODE_EXTRA_CA_CERTS
-      value: /opt/ssl/ca-internal
-    name: git2consul
-    port: 7500
-    ssl: false
-    version: 10.15.2-60
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
-  - name: cb2
-    options:
-      app_id: '100'
-      desired_capacity: ''
-      full_backup_sch: 1W:Sun
-      instance_type: m5.xlarge
-      team_id: dba
-      volume_size: '200'
-      volume_type: gp2
-    type: cb
-    version: 1.0
-  - name: neptune1
-    options:
-      ApplyImmediately: true
-      db_instances:
-      - db_instance_class: db.r4.2xlarge
-        db_name: db1
-    type: neptune
-    version: 1.0
-  - annotations:
-    - name: prometheus.io/scrape
-      value: true
-    - name: prometheus.io/path
-      value: /lcd/metrics
-    - name: prometheus.io/port
-      value: 9310
-    application: lcd
-    env:
-    - secret: VAULT_TOKEN
-      value: vault-read
-    - secret: CONSUL_TOKEN
-      value: consul-read
-    - name: CONSUL_USE_SSL
-      value: 'true'
-    - name: CONSUL_URL
-      value: https://consul.andy4.eu-west-1.dev:8543
-    - name: CONSUL_PORT
-      value: 8543
-    - name: APP_ENV
-      value: env_properties
-    - name: VAULT_SKIP_VERIFY
-      value: 'true'
-    - name: VAULT_ADDR
-      value: vault.kube-system.svc.cluster.local
-    - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/lcd-service
-    - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
-    - name: service_name
-      value: lcd-service
-    - name: container_name
-      pod_field: metadata.name
-    - name: environment
-      pod_field: metadata.namespace
-    - name: host
-      pod_field: spec.nodeName
-    - name: namespace
-      pod_field: metadata.namespace
-    - name: container_id
-      pod_field: metadata.name
-    - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
-    - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
-    - name: CB_SSL_ENABLED
-      value: true
-    - secret: KEYTOOL_PASSWD
-      value: keytool-password
-    - name: PEM_PATH
-      value: /opt/ssl
-    - secret: JAVA_AGENT_LIC
-      value: java-agent-lic
-    limits:
-      memory: 2048Mi
-    name: lcd
-    port: 9310
-    replicas: 1
-    ssl: false
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
-  - name: glp-zookeeper
-    options:
-      replicas: 3
-      resources_limits_cpu: 500m
-      resources_limits_memory: 512Mi
-      resources_requests_cpu: 500m
-      resources_requests_memory: 512Mi
-    type: zookeeper
-    version: 1.0
-  - annotations:
-    - name: prometheus.io/scrape
-      value: true
-    - name: prometheus.io/path
-      value: /pla/metrics
-    - name: prometheus.io/port
-      value: 9580
-    application: pla
-    env:
-    - secret: VAULT_TOKEN
-      value: vault-read
-    - secret: CONSUL_TOKEN
-      value: consul-read
-    - name: CONSUL_USE_SSL
-      value: 'true'
-    - name: CONSUL_URL
-      value: https://consul.andy4.eu-west-1.dev:8543
-    - name: CONSUL_PORT
-      value: 8543
-    - name: APP_ENV
-      value: env_properties
-    - name: VAULT_SKIP_VERIFY
-      value: 'true'
-    - name: VAULT_ADDR
-      value: vault.kube-system.svc.cluster.local
-    - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/pla-service
-    - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
-    - name: service_name
-      value: pla-service
-    - name: container_name
-      pod_field: metadata.name
-    - name: environment
-      pod_field: metadata.namespace
-    - name: host
-      pod_field: spec.nodeName
-    - name: namespace
-      pod_field: metadata.namespace
-    - name: container_id
-      pod_field: metadata.name
-    - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
-    - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
-    - name: CB_SSL_ENABLED
-      value: true
-    - secret: KEYTOOL_PASSWD
-      value: keytool-password
-    - name: PEM_PATH
-      value: /opt/ssl
-    - secret: JAVA_AGENT_LIC
-      value: java-agent-lic
-    limits:
-      memory: 2048Mi
-    name: pla
-    port: 9580
-    replicas: 1
-    ssl: false
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
-  - annotations:
-    - name: prometheus.io/scrape
-      value: true
-    - name: prometheus.io/path
-      value: /amp/metrics
-    - name: prometheus.io/port
-      value: 9200
-    application: amp
-    env:
-    - secret: VAULT_TOKEN
-      value: vault-read
-    - secret: CONSUL_TOKEN
-      value: consul-read
-    - name: CONSUL_USE_SSL
-      value: 'true'
-    - name: CONSUL_URL
-      value: https://consul.andy4.eu-west-1.dev:8543
-    - name: CONSUL_PORT
-      value: 8543
-    - name: APP_ENV
-      value: env_properties
-    - name: VAULT_SKIP_VERIFY
-      value: 'true'
-    - name: VAULT_ADDR
-      value: vault.kube-system.svc.cluster.local
-    - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/amp-service
-    - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb2
-    - name: service_name
-      value: amp-service
-    - name: container_name
-      pod_field: metadata.name
-    - name: environment
-      pod_field: metadata.namespace
-    - name: host
-      pod_field: spec.nodeName
-    - name: namespace
-      pod_field: metadata.namespace
-    - name: container_id
-      pod_field: metadata.name
-    - secret: CLUSTER_USERNAME
-      value: cb-cb2-user
-    - secret: CLUSTER_PASSWORD
-      value: cb-cb2-pass
-    - name: CB_SSL_ENABLED
-      value: true
-    - secret: KEYTOOL_PASSWD
-      value: keytool-password
-    - name: PEM_PATH
-      value: /opt/ssl
-    - secret: JAVA_AGENT_LIC
-      value: java-agent-lic
-    limits:
-      memory: 2048Mi
-    name: amp
-    port: 9200
-    replicas: 1
-    ssl: false
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
-  - annotations:
-    - name: prometheus.io/scrape
-      value: true
-    - name: prometheus.io/path
       value: /cprs/metrics
     - name: prometheus.io/port
       value: 9490
@@ -1926,9 +2032,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1947,79 +2055,6 @@ environments:
     - name: ca-internal
       path: /opt/ssl
       type: secret
-  - annotations:
-    - name: prometheus.io/scrape
-      value: true
-    - name: prometheus.io/path
-      value: /lap/metrics
-    - name: prometheus.io/port
-      value: 9030
-    application: lap
-    env:
-    - secret: VAULT_TOKEN
-      value: vault-read
-    - secret: CONSUL_TOKEN
-      value: consul-read
-    - name: CONSUL_USE_SSL
-      value: 'true'
-    - name: CONSUL_URL
-      value: https://consul.andy4.eu-west-1.dev:8543
-    - name: CONSUL_PORT
-      value: 8543
-    - name: APP_ENV
-      value: env_properties
-    - name: VAULT_SKIP_VERIFY
-      value: 'true'
-    - name: VAULT_ADDR
-      value: vault.kube-system.svc.cluster.local
-    - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/lap-service
-    - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb2
-    - name: service_name
-      value: lap-service
-    - name: container_name
-      pod_field: metadata.name
-    - name: environment
-      pod_field: metadata.namespace
-    - name: host
-      pod_field: spec.nodeName
-    - name: namespace
-      pod_field: metadata.namespace
-    - name: container_id
-      pod_field: metadata.name
-    - secret: CLUSTER_USERNAME
-      value: cb-cb2-user
-    - secret: CLUSTER_PASSWORD
-      value: cb-cb2-pass
-    - name: CB_SSL_ENABLED
-      value: true
-    - secret: KEYTOOL_PASSWD
-      value: keytool-password
-    - name: PEM_PATH
-      value: /opt/ssl
-    - secret: JAVA_AGENT_LIC
-      value: java-agent-lic
-    limits:
-      memory: 2048Mi
-    name: lap
-    port: 9030
-    replicas: 1
-    ssl: false
-    volumes:
-    - name: ca-internal
-      path: /opt/ssl
-      type: secret
-  - name: glp-kafka
-    options:
-      replicas: 3
-      resources_limits_cpu: 500m
-      resources_limits_memory: 512Mi
-      resources_requests_cpu: 500m
-      resources_requests_memory: 512Mi
-      zookeeperConnect: glp-zookeeper-headless
-    type: kafka
-    version: 1.0
   - annotations:
     - name: prometheus.io/scrape
       value: true
@@ -2062,9 +2097,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2125,9 +2162,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2146,26 +2185,6 @@ environments:
     - name: ca-internal
       path: /opt/ssl
       type: secret
-  - application: kong-dashboard
-    command:
-    - ./docker/entrypoint.sh
-    - start
-    - --kong-url
-    - http://kong-api-gw:8001
-    - --basic-auth
-    - $(UNAME)=$(PASSWD)
-    env:
-    - name: PASSWD
-      value: postgres-glp2-nf2
-    - name: UNAME
-      value: admin
-    external_url: kong-glp2-nf2.glp.pearsondev.tech
-    httpsOnly: false
-    name: kong-admin
-    port: 8080
-    replicas: 1
-    ssl: false
-    version: v3.5.0
   - annotations:
     - name: prometheus.io/scrape
       value: true
@@ -2208,9 +2227,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2229,23 +2250,14 @@ environments:
     - name: ca-internal
       path: /opt/ssl
       type: secret
-  - name: glp2-nf2-kong
-    options:
-      allocatedstorage: '200'
-      dbinstanceclass: db.m3.medium
-      multiaz: 'False'
-      replicas: 2
-      version: 9.6.6
-    type: postgres
-    version: 1.0
   - annotations:
     - name: prometheus.io/scrape
       value: true
     - name: prometheus.io/path
-      value: /rblearner/metrics
+      value: /assessment/metrics
     - name: prometheus.io/port
-      value: 9300
-    application: rblearner
+      value: 9370
+    application: assessment
     env:
     - secret: VAULT_TOKEN
       value: vault-read
@@ -2264,11 +2276,11 @@ environments:
     - name: VAULT_ADDR
       value: vault.kube-system.svc.cluster.local
     - name: PREFIX_MAIN
-      value: glp2-nf2/namespace/glp2-nf2/rblearner-service
+      value: glp2-nf2/namespace/glp2-nf2/assessment-service
     - name: PREFIX_DB
       value: glp2-nf2/namespace/glp2-nf2/global/cb1
     - name: service_name
-      value: rblearner-service
+      value: assessment-service
     - name: container_name
       pod_field: metadata.name
     - name: environment
@@ -2280,9 +2292,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2293,8 +2307,73 @@ environments:
       value: java-agent-lic
     limits:
       memory: 2048Mi
-    name: rblearner
-    port: 9300
+    name: assessment
+    port: 9370
+    replicas: 1
+    ssl: false
+    volumes:
+    - name: ca-internal
+      path: /opt/ssl
+      type: secret
+  - annotations:
+    - name: prometheus.io/scrape
+      value: true
+    - name: prometheus.io/path
+      value: /cma/metrics
+    - name: prometheus.io/port
+      value: 9550
+    application: cma
+    env:
+    - secret: VAULT_TOKEN
+      value: vault-read
+    - secret: CONSUL_TOKEN
+      value: consul-read
+    - name: CONSUL_USE_SSL
+      value: 'true'
+    - name: CONSUL_URL
+      value: https://consul.andy4.eu-west-1.dev:8543
+    - name: CONSUL_PORT
+      value: 8543
+    - name: APP_ENV
+      value: env_properties
+    - name: VAULT_SKIP_VERIFY
+      value: 'true'
+    - name: VAULT_ADDR
+      value: vault.kube-system.svc.cluster.local
+    - name: PREFIX_MAIN
+      value: glp2-nf2/namespace/glp2-nf2/cma-service
+    - name: PREFIX_DB
+      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+    - name: service_name
+      value: cma-service
+    - name: container_name
+      pod_field: metadata.name
+    - name: environment
+      pod_field: metadata.namespace
+    - name: host
+      pod_field: spec.nodeName
+    - name: namespace
+      pod_field: metadata.namespace
+    - name: container_id
+      pod_field: metadata.name
+    - secret: CLUSTER_USERNAME
+      value: cb-cb1/cb_user
+    - secret: CLUSTER_PASSWORD
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
+    - name: CB_SSL_ENABLED
+      value: true
+    - secret: KEYTOOL_PASSWD
+      value: keytool-password
+    - name: PEM_PATH
+      value: /opt/ssl
+    - secret: JAVA_AGENT_LIC
+      value: java-agent-lic
+    limits:
+      memory: 2048Mi
+    name: cma
+    port: 9550
     replicas: 1
     ssl: false
     volumes:
@@ -2343,9 +2422,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2364,17 +2445,6 @@ environments:
     - name: ca-internal
       path: /opt/ssl
       type: secret
-  - name: cb1
-    options:
-      app_id: '100'
-      desired_capacity: ''
-      full_backup_sch: 1W:Sun
-      instance_type: m5.xlarge
-      team_id: dba
-      volume_size: '200'
-      volume_type: gp2
-    type: cb
-    version: 1.0
   - annotations:
     - name: prometheus.io/scrape
       value: true
@@ -2417,9 +2487,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2480,9 +2552,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-user
+      value: cb-cb1/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-pass
+      value: cb-cb1/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2543,9 +2617,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2-user
+      value: cb-cb2/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2-pass
+      value: cb-cb2/cb_password
+    - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
