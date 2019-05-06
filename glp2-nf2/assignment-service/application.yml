@@ -1,0 +1,47 @@
+glp:
+  core:
+    security:
+      rest:
+        auth-rules:
+        - path: /assignment/v2/assignableUnits/{courseId}
+          type: SIMPLELIST
+          value: learner,instructor
+        - path: /assignment/v2/assignmentCompositions
+          type: SIMPLELIST
+          value: learner,instructor
+        - path: /assignment/v2/assignments
+          type: SIMPLELIST
+          value: learner,instructor
+        - path: /assignment/v2/assignments/{assignmentId}
+          type: SIMPLELIST
+          value: system,learner,instructor
+        - path: /assignment/v2/assignments/{assignmentId}/status
+          type: SIMPLELIST
+          value: learner,instructor
+        - path: /assignments/{assignmentId}/stateTransition
+          type: SIMPLELIST
+          value: learner,instructor
+        - path: /assignment/v2/assignments/{assignmentId}/toc
+          type: SIMPLELIST
+          value: system,learner,instructor
+        - path: /assignment/v2/assignmentStatus
+          type: SIMPLELIST
+          value: learner,instructor
+        - path: /assignment/v2/assignedUnitStatus
+          type: SIMPLELIST
+          value: learner,instructor
+        - path: /assignment/v2/userAssignedUnitStatus
+          type: SIMPLELIST
+          value: learner,instructor
+        enabled: true
+        disableUri: /assignment/health,/assignment/ready
+      oauth2:
+        enabled: true
+        resource.client-id: Go0HTjoK5u35Hq4R_QE9FQ==
+        resource.secret: 5hIxzqsT_6pogxdyt4p3iw==
+        system.client-id: Go0HTjoK5u35Hq4R_QE9FQ==
+        system.secret: 5hIxzqsT_6pogxdyt4p3iw==
+      iam:
+        location: http://iam:9100
+        endpoints.introspect: /iam/v2/introspect
+        endpoints.get-token: /iam/v2/oauth/token?grant_type=password

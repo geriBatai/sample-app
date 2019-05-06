@@ -1,0 +1,16 @@
+glp:
+  core:
+    security:
+      rest:
+        enabled: true
+        disableUri: /assessment/health,/assessment/ready
+      oauth2:
+        enabled: true
+        resource.client-id: 
+        resource.secret: 
+        system.client-id: 
+        system.secret: 
+      iam:
+        location: http://iam:9100
+        endpoints.introspect: /iam/v2/introspect
+        endpoints.get-token: /iam/v2/oauth/token?grant_type=password

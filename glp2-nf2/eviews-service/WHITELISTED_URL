@@ -1,0 +1,1 @@
+^(https|http|wss|ftp)://(s3.amazonaws.com|epspqa.stg-openclass.com/eps).*$

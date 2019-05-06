@@ -1,0 +1,1 @@
+--spring.cloud.consul.enabled=true --isc.saga.timeout.fixedDelay=604800000

@@ -1,0 +1,26 @@
+glp:
+  core:
+    security:
+      auth-server:
+        clients:
+          scopeList:
+            '[ffffffff5af6b2a0e4b0ce5aa624f3b4]': external,system
+            '[ffffffff5abd417be4b0c6378ea89ca6]': instructor,system
+          clients:
+            Go0HTjoK5u35Hq4R_QE9FQ==: 5hIxzqsT_6pogxdyt4p3iw==
+            cBgmqldN9OFEq2guxzYtNQ==: jrOzzn-3h0CHIezIzrRBdP56H5i3uc99Hh3jT46LRY0=
+            pyRbn_W-WlmeHpmfn5G9ajuWn99PGfqg0l7q0fhzMyc=: LfaJtYvHWHkArUsXZ0v2APzPrkb6O4rUd5dC4fETo84=
+            EWezeFDQolCDFGIq0nkFig==: 30HloGJ5IweHDK6m4iIAsw==
+            6tIxkpJpDCwmFDaFdGLRgA==: JhX3fdIEu68S2jw4foy_BQ==
+    cache:
+      local:
+        enabled: true
+        cachename: storage
+        maxEntriesLocalHeap: 1000
+        eternal: true
+        timeToLiveSeconds: 3000
+        timeToIdleSeconds: 3000
+        diskExpiryThreadIntervalSeconds: 3000
+sign-publish-event:
+  type:
+    list: signAndPublishEvent,PLA_EVENT

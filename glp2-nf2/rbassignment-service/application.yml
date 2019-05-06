@@ -1,0 +1,44 @@
+glp:
+  core:
+    security:     
+      rest:
+        introspection:
+          static-scopes:
+          - path: /iie-api/courses/{sectionId}/assignableunits
+            scopes: registrar
+          - path: /iie-api/courses/{sectionId}/assignment
+            scopes: registrar
+          - path: /iie-api/courses/{sectionId}/assignments
+            scopes: registrar
+          - path: /iie-api/courses/{sectionId}/assignments/{assignmentId}
+            scopes: registrar
+          - path: /iie-api/v2/getAssignableUnits/{sectionId}
+            scopes: registrar
+        auth-rules:
+        - path: /iie-api/courses/{sectionId}/assignableunits
+          type: SIMPLELIST
+          value: learner,instructor
+        - path: /iie-api/courses/{sectionId}/assignment
+          type: SIMPLELIST
+          value: learner,instructor
+        - path: /iie-api/courses/{sectionId}/assignments
+          type: SIMPLELIST
+          value: learner,instructor
+        - path: /iie-api/courses/{sectionId}/assignments/{assignmentId}
+          type: SIMPLELIST
+          value: learner,instructor
+        - path: /iie-api/v2/getAssignableUnits/{sectionId}
+          type: SIMPLELIST
+          value: learner,instructor
+        enabled: true
+        disableUri: /iie-api/health,/iie-api/ready,/iie-api/courses/{sectionId}/assignments/settings,/iie-api/courses/{sectionId}/assignments/sequence,/iie-api/courses/{sectionId}/scoringpolicy
+      oauth2:
+        enabled: true
+        resource.client-id: Go0HTjoK5u35Hq4R_QE9FQ==
+        resource.secret: 5hIxzqsT_6pogxdyt4p3iw==
+        system.client-id: Go0HTjoK5u35Hq4R_QE9FQ==
+        system.secret: 5hIxzqsT_6pogxdyt4p3iw==
+      iam:
+        location: http://iam:9100 
+        endpoints.introspect: /iam/v2/introspect
+        endpoints.get-token: /iam/v2/oauth/token?grant_type=password

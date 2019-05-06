@@ -1,0 +1,20 @@
+glp:
+  core:
+    security:
+      rest:
+        auth-rules:
+        - path: /lcd/v2/learnerCourses/{courseSectionId}/*
+          type: SIMPLELIST
+          value: learner,instructor
+        enabled: true
+        disableUri: /lcd/health,/lcd/ready,/lcd/v2/learnerCourses/{learnerCourseSectionId}/assignments,/lcd/v2/learnerCourses/{courseSectionId}/learningExperiences/{learningExperienceId}/assets
+      oauth2:
+        enabled: true
+        resource.client-id: EWezeFDQolCDFGIq0nkFig==
+        resource.secret: 30HloGJ5IweHDK6m4iIAsw==
+        system.client-id: EWezeFDQolCDFGIq0nkFig==
+        system.secret: 30HloGJ5IweHDK6m4iIAsw==
+      iam:
+        location: http://iam:9100
+        endpoints.introspect: /iam/v2/introspect
+        endpoints.get-token: /iam/v2/oauth/token?grant_type=password

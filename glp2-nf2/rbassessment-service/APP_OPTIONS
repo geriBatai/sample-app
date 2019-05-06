@@ -1,0 +1,1 @@
+--server.tomcat.min-spare-threads=100 --isc.saga.timeout.fixedDelay=604800000 --server.tomcat.max-threads=250

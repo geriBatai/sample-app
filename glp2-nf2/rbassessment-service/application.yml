@@ -1,0 +1,31 @@
+glp:
+  core:
+    security:
+      rest:
+        introspection:
+          static-scopes:
+          - path: /acs-api/courses/{contextId}/assessments/{assessmentId}/assessmentItems/{assessmentItems}/result
+            scopes: registrar
+          - path: /acs-api/courses/{contextId}/assessments/{assessmentId}/policy
+            scopes: registrar
+          - path: /acs-api/courses/{contextId}/assessments/{assessmentId}
+            scopes: registrar
+        auth-rules:
+        - path: /acs-api/courses/{contextId}/assessments/{assessmentId}
+          type: SIMPLELIST
+          value: learner,instructor
+        - path: /acs-api/courses/{contextId}/assessments/{assessmentId}/policy
+          type: SIMPLELIST
+          value: learner,instructor
+        enabled: true
+        disableUri: /acs-api/health,/acs-api/ready
+      oauth2:
+        enabled: true
+        resource.client-id: Go0HTjoK5u35Hq4R_QE9FQ==
+        resource.secret: 5hIxzqsT_6pogxdyt4p3iw==
+        system.client-id: Go0HTjoK5u35Hq4R_QE9FQ==
+        system.secret: 5hIxzqsT_6pogxdyt4p3iw==
+      iam:
+        location: http://iam:9100
+        endpoints.introspect: /iam/v2/introspect
+        endpoints.get-token: /iam/v2/oauth/token?grant_type=password

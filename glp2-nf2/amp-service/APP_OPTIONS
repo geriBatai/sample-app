@@ -1,0 +1,2 @@
+--glp.core.validation.enabled=false --glp.core.validation.isc-sync.enabled=false --glp.core.validation.isc-async.enabled=false --glp.core.validation.rest-context.enabled=false --spring.sleuth.enabled=false
+

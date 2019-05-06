@@ -1,0 +1,28 @@
+glp:
+  core:
+    security:
+      rest:
+        path:
+          sectionid:
+            courses: courses
+        introspection:
+          static-scopes:
+            - path: /rblearner/v2/courses/{courseSectionId}/*
+              scopes: registrar
+        auth-rules:
+        - path: /rblearner/v2/courses/{courseSectionId}/*
+          type: SIMPLELIST
+          value: learner,instructor
+        enabled: true
+        disableUri: /rblearner/health,/rblearner/ready,/rblearner/v2/courses/{courseSectionId}/assignments,/rblearner/v2/courses/{courseSectionId}/assignments/{assignmentId}/assets,/rblearner/v2/courses/{courseSectionId}/assignments/{assignmentId}/status 
+      oauth2:
+        enabled: true
+        resource.client-id: pyRbn_W-WlmeHpmfn5G9ajuWn99PGfqg0l7q0fhzMyc=
+        resource.secret: LfaJtYvHWHkArUsXZ0v2APzPrkb6O4rUd5dC4fETo84=
+        system.client-id: pyRbn_W-WlmeHpmfn5G9ajuWn99PGfqg0l7q0fhzMyc=
+        system.secret: LfaJtYvHWHkArUsXZ0v2APzPrkb6O4rUd5dC4fETo84=
+      iam:
+        location: http://iam:9100
+        endpoints.introspect: /iam/v2/introspect
+        endpoints.get-token: /iam/v2/oauth/token?grant_type=password
+        

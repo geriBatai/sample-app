@@ -1,0 +1,1 @@
+-XX:+UseG1GC -server -Xss512k -Xms512m -Xmx1536m -XX:MaxMetaspaceSize=128m -Dreactor.ipc.netty.workerCount=1 -Dcom.couchbase.ioPoolSize=1 -Dcom.couchbase.computationPoolSize=1 -Dnewrelic.config.distributed_tracing.enabled=true -Dnewrelic.config.log_file_path=/var/log -Dnewrelic.config.log_file_name=newrelic.log -Dnewrelic.config.log_level=error
