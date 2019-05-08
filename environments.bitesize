@@ -49,6 +49,12 @@ environments:
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -115,6 +121,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -192,6 +204,12 @@ environments:
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -258,6 +276,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -326,6 +350,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -393,6 +423,12 @@ environments:
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -459,6 +495,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -537,6 +579,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -603,6 +651,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -671,6 +725,12 @@ environments:
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -737,6 +797,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -805,6 +871,12 @@ environments:
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -871,6 +943,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -939,6 +1017,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -1005,6 +1089,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -1073,6 +1163,12 @@ environments:
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -1139,6 +1235,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -1207,6 +1309,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -1273,6 +1381,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -1349,6 +1463,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -1415,6 +1535,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -1492,6 +1618,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -1558,6 +1690,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -1626,6 +1764,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -1692,6 +1836,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -1799,6 +1949,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -1876,6 +2032,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -2025,6 +2187,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -2091,6 +2259,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -2159,6 +2333,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -2225,6 +2405,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -2293,6 +2479,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -2359,6 +2551,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -2427,6 +2625,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -2493,6 +2697,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
@@ -2561,6 +2771,12 @@ environments:
       value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
       value: cb-cb1-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb1-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb1-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: PUBLIC_AUTH_KEY
@@ -2627,6 +2843,12 @@ environments:
     - secret: CLUSTER_PASSWORD
       value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
+      value: cb-cb2-bucketadmin/cb_host
+    - secret: CACHE_CB_USERNAME
+      value: cb-cb2-bucketadmin/cb_user
+    - secret: CACHE_CB_PASSWORD
+      value: cb-cb2-bucketadmin/cb_password
+    - secret: CACHE_CB_HOSTNAME
       value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
