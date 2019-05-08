@@ -634,7 +634,7 @@ environments:
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/iam-service
     - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+      value: glp2-nf2/namespace/glp2-nf2/global/cb2
     - name: service_name
       value: iam-service
     - name: container_name
@@ -648,11 +648,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-bucketadmin/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-bucketadmin/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1-bucketadmin/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2147,7 +2147,7 @@ environments:
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/pdz-service
     - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+      value: glp2-nf2/namespace/glp2-nf2/global/cb2
     - name: service_name
       value: pdz-service
     - name: container_name
@@ -2161,11 +2161,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-bucketadmin/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-bucketadmin/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1-bucketadmin/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2407,7 +2407,7 @@ environments:
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/registrar-service
     - name: PREFIX_DB
-      value: glp2-nf2/namespace/glp2-nf2/global/cb1
+      value: glp2-nf2/namespace/glp2-nf2/global/cb2
     - name: service_name
       value: registrar-service
     - name: container_name
@@ -2421,11 +2421,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1-bucketadmin/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1-bucketadmin/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1-bucketadmin/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
