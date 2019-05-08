@@ -44,11 +44,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb2/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -109,11 +109,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb2/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -183,11 +183,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb2/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -248,11 +248,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -313,11 +313,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -378,11 +378,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb2/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -443,11 +443,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb2/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -518,11 +518,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -583,11 +583,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -648,11 +648,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -713,11 +713,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb2/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -778,11 +778,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb2/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -843,11 +843,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -908,11 +908,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -973,11 +973,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb2/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1038,11 +1038,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb2/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1103,11 +1103,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1168,11 +1168,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1233,11 +1233,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb2/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1306,11 +1306,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1371,11 +1371,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1445,11 +1445,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1510,11 +1510,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1575,11 +1575,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1640,11 +1640,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb2/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1744,11 +1744,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1820,11 +1820,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -1966,11 +1966,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2031,11 +2031,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2096,11 +2096,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2161,11 +2161,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2226,11 +2226,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2291,11 +2291,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2356,11 +2356,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2421,11 +2421,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2486,11 +2486,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb1/cb_user
+      value: cb-cb1-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb1/cb_password
+      value: cb-cb1-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb1/cb_host
+      value: cb-cb1-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
@@ -2551,11 +2551,11 @@ environments:
     - name: container_id
       pod_field: metadata.name
     - secret: CLUSTER_USERNAME
-      value: cb-cb2/cb_user
+      value: cb-cb2-bucketadmin/cb_user
     - secret: CLUSTER_PASSWORD
-      value: cb-cb2/cb_password
+      value: cb-cb2-bucketadmin/cb_password
     - secret: COUCHBASE_ENDPOINT
-      value: cb-cb2/cb_host
+      value: cb-cb2-bucketadmin/cb_host
     - name: CB_SSL_ENABLED
       value: true
     - secret: KEYTOOL_PASSWD
