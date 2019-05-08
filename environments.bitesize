@@ -26,7 +26,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/rblms-service
     - name: PREFIX_DB
@@ -93,7 +93,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/ipt-service
     - name: PREFIX_DB
@@ -169,7 +169,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/nnam-service
     - name: PREFIX_DB
@@ -236,7 +236,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/eviews-service
     - name: PREFIX_DB
@@ -303,7 +303,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/rblearner-service
     - name: PREFIX_DB
@@ -370,7 +370,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/pgp-service
     - name: PREFIX_DB
@@ -437,7 +437,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/amp-service
     - name: PREFIX_DB
@@ -514,7 +514,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/rbassignment-service
     - name: PREFIX_DB
@@ -581,7 +581,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/lee-service
     - name: PREFIX_DB
@@ -648,7 +648,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/iam-service
     - name: PREFIX_DB
@@ -715,7 +715,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/imc-service
     - name: PREFIX_DB
@@ -782,7 +782,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/cns-service
     - name: PREFIX_DB
@@ -849,7 +849,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/lapp-service
     - name: PREFIX_DB
@@ -916,7 +916,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/aum-service
     - name: PREFIX_DB
@@ -983,7 +983,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/rbaum-service
     - name: PREFIX_DB
@@ -1050,7 +1050,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/lap-service
     - name: PREFIX_DB
@@ -1117,7 +1117,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/lae-service
     - name: PREFIX_DB
@@ -1184,7 +1184,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/gms-service
     - name: PREFIX_DB
@@ -1251,7 +1251,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/autobahnpro-service
     - name: PREFIX_DB
@@ -1326,7 +1326,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/rbassessment-service
     - name: PREFIX_DB
@@ -1393,7 +1393,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/lec-service
     - name: PREFIX_DB
@@ -1469,7 +1469,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/roster-service
     - name: PREFIX_DB
@@ -1536,7 +1536,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/lad-service
     - name: PREFIX_DB
@@ -1603,7 +1603,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/assignment-service
     - name: PREFIX_DB
@@ -1670,7 +1670,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/lms-service
     - name: PREFIX_DB
@@ -1776,7 +1776,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/lcd-service
     - name: PREFIX_DB
@@ -1854,7 +1854,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/pla-service
     - name: PREFIX_DB
@@ -2002,7 +2002,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/cprs-service
     - name: PREFIX_DB
@@ -2069,7 +2069,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/cic-service
     - name: PREFIX_DB
@@ -2136,7 +2136,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/gbg-service
     - name: PREFIX_DB
@@ -2203,7 +2203,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/pdz-service
     - name: PREFIX_DB
@@ -2270,7 +2270,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/assessment-service
     - name: PREFIX_DB
@@ -2337,7 +2337,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/cma-service
     - name: PREFIX_DB
@@ -2404,7 +2404,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/rbgradebook-service
     - name: PREFIX_DB
@@ -2471,7 +2471,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/registrar-service
     - name: PREFIX_DB
@@ -2538,7 +2538,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/cms-service
     - name: PREFIX_DB
@@ -2605,7 +2605,7 @@ environments:
     - name: VAULT_SKIP_VERIFY
       value: 'true'
     - name: VAULT_ADDR
-      value: https://vault.kube-system.svc.cluster.local
+      value: https://vault.kube-system.svc.cluster.local:8243
     - name: PREFIX_MAIN
       value: glp2-nf2/namespace/glp2-nf2/lpb-service
     - name: PREFIX_DB
