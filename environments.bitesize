@@ -1864,6 +1864,9 @@ environments:
       path: /opt/ssl
       type: secret
   - application: git2consul-custom
+    command:
+    - sh
+    - /entry/entrypoint.sh
     env:
     - name: BRANCH
       value: master
@@ -1875,6 +1878,8 @@ environments:
       value: 'yes'
     - name: CONSUL_HTTP_SSL_VERIFY
       value: 'true'
+    - name: CONFIG_FILE
+      value: /config.json/config
     - name: CONFIG_KEY
       value: glp2-nf2/git2consul/config
     - name: MOUNT_POINT
@@ -1890,6 +1895,12 @@ environments:
     volumes:
     - name: ca-internal
       path: /opt/ssl
+      type: secret
+    - name: git2consul-entry
+      path: /entry
+      type: secret
+    - name: git2consul-config
+      path: /config.json
       type: secret
   - name: cb2
     options:
