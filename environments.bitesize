@@ -1564,7 +1564,7 @@ environments:
       type: secret
   - name: glp2-nf2-kong
     options:
-      allocatedstorage: '200'
+      allocatedstorage: '50'
       dbinstanceclass: db.m3.medium
       multiaz: 'False'
       replicas: 2
